@@ -41,6 +41,11 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    private void FixedUpdate()
+    {
+        
+    }
+
     private void StartDash()
     {
         rb.AddForce(movement * dashImpulse, ForceMode2D.Impulse);
