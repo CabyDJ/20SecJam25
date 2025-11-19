@@ -12,6 +12,10 @@ public class PlayerScript : MonoBehaviour
     public float dashImpulse = 150f;
     public float dashCooldown = 2f;
     private bool dashReady;
+    private bool isStunned;
+    public float stunTime = 0.5f;
+    [SerializeField]
+    private float hitTimePenalty = 2;
 
     void Awake()
     {
@@ -31,8 +35,10 @@ public class PlayerScript : MonoBehaviour
         {
             movement = inputHandler.MoveInput;
         }
+        //movement = inputHandler.MoveInput;
 
-        rb.AddForce(movement * moveSpeed);
+        //if (!isStunned)
+        //    rb.AddForce(movement * moveSpeed);
 
         if (dashReady && inputHandler.DashInput)
         {
@@ -43,7 +49,8 @@ public class PlayerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (!isStunned)
+            rb.AddForce(movement * moveSpeed);
     }
 
     private void StartDash()
@@ -58,5 +65,25 @@ public class PlayerScript : MonoBehaviour
         dashReady = false;
         yield return new WaitForSeconds(dashCooldown);
         dashReady = true;
+    }
+
+    private IEnumerator StartStunnedCD()
+    {
+        GameManager.instance.ReduceTimer(hitTimePenalty);
+        isStunned = true;
+        yield return new WaitForSeconds(stunTime);
+        isStunned = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("HIT PLAYER");
+            Vector2 dir = (collision.gameObject.transform.position - transform.position).normalized;
+            rb.linearVelocity = Vector2.zero;
+            StartCoroutine(StartStunnedCD());
+            rb.AddForce(-dir * 200, ForceMode2D.Impulse);
+        }
     }
 }

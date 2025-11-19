@@ -35,7 +35,7 @@ public class Proyectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("A");
+        //Debug.Log("A");
         if (collision.gameObject.CompareTag("Object"))
         {
             Destroy(gameObject);
@@ -44,7 +44,7 @@ public class Proyectile : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("B");
+        //Debug.Log("B");
         if (collision.gameObject.CompareTag("Object"))
         {
             Destroy(gameObject);
