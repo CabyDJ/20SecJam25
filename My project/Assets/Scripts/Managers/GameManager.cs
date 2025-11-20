@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         time -= Time.deltaTime;
-        Debug.Log(time);
+        //Debug.Log(time);
 
         if (time <= threshold)
         {
@@ -71,5 +72,11 @@ public class GameManager : MonoBehaviour
     public void ReduceTimer(float t)
     {
         time -= t;
+    }
+
+    public void LoadGame()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;//Put scene name instead
+        SceneManager.LoadScene(currentSceneName);
     }
 }

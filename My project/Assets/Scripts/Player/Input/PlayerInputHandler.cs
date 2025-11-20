@@ -9,6 +9,8 @@ public class PlayerInputHandler : MonoBehaviour
     public Vector2 RawMoveInput { get; private set; }
     public bool DashInput { get; private set; }
     public Coroutine DashCoroutine { get; private set; }
+    public bool TauntInput { get; private set; }
+    public Coroutine TauntCoroutine { get; private set; }
     [SerializeField]
     private float inputHoldTime = 0.2f;
 
@@ -65,5 +67,35 @@ public class PlayerInputHandler : MonoBehaviour
     {
         yield return new WaitForSeconds(inputHoldTime);
         DashInput = false;
+    }
+
+    public void OnReloadInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            GameManager.instance.LoadGame();
+        }
+    }
+
+    public void OnTauntInput(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            SetTaunt(true);
+            if (TauntCoroutine != null)
+                StopCoroutine(TauntCoroutine);
+            TauntCoroutine = StartCoroutine(StartTauntHoldTime());
+        }
+    }
+
+    public void SetTaunt(bool taunt)
+    {
+        TauntInput = taunt;
+    }
+
+    private IEnumerator StartTauntHoldTime()
+    {
+        yield return new WaitForSeconds(inputHoldTime);
+        TauntInput = false;
     }
 }

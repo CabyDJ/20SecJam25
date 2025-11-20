@@ -39,7 +39,7 @@ public class UIManager : MonoBehaviour
     {
         int t = (int)time;
         double t1 = time;
-        Debug.Log(t);
+        //Debug.Log(t);
         timeUI.text = time.ToString("F1");
     }
 }

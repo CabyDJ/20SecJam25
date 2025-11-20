@@ -55,6 +55,7 @@ public class PlayerScript : MonoBehaviour
 
     private void StartDash()
     {
+        rb.linearVelocity = Vector2.zero;
         rb.AddForce(movement * dashImpulse, ForceMode2D.Impulse);
         StartCoroutine(StartDashCD());
         inputHandler.SetDash(false);

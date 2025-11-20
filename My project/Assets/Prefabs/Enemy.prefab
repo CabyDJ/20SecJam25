@@ -137,6 +137,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   player: {fileID: 0}
+  projectile: {fileID: 3058455990999863742, guid: f0f4181c7106e78458acb08cf07f9b37, type: 3}
+  moveSpeed: 15
+  throwTime: 2
 --- !u!50 &4474877499885215404
 Rigidbody2D:
   serializedVersion: 5
