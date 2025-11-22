@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
 
     private Rigidbody2D rb;
     public PlayerInputHandler inputHandler;
-    private Vector2 movement = Vector2.right;
+    private Vector2 movement = Vector2.down;
     public float moveSpeed = 50f;
     public float dashImpulse = 150f;
     public float dashCooldown = 2f;

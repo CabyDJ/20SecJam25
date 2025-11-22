@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     private GameObject uiManagerGO;
     private UIManager uiManager;
 
-    float threshold = 0;
+    float timeLimit = 0;
+    bool doubleScore = false;
 
     public int score
     {
@@ -57,7 +58,7 @@ public class GameManager : MonoBehaviour
         time -= Time.deltaTime;
         //Debug.Log(time);
 
-        if (time <= threshold)
+        if (time <= timeLimit)
         {
             Debug.Log("Time out!");
             // Do what you want
@@ -66,7 +67,18 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(int value)
     {
-        score += value;
+        int v = value;
+
+        if (doubleScore)
+            v = v * 2;
+
+        score += v;
+    }
+
+    public void SetDoubleScore(bool x2)
+    {
+        doubleScore = x2;
+        uiManager.ShowX2UI(x2);
     }
 
     public void ReduceTimer(float t)

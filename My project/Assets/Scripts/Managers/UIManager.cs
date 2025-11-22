@@ -10,11 +10,15 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject timeGO;
     private TMP_Text timeUI;
+    [SerializeField]
+    private GameObject X2GO;
+    private TMP_Text X2UI;
 
     void Awake()
     {
         scoreUI = scoreGO.GetComponent<TMP_Text>();
         timeUI = timeGO.GetComponent<TMP_Text>();
+        X2UI = X2GO.GetComponent<TMP_Text>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,9 +41,15 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTimeUI(float time)
     {
-        int t = (int)time;
-        double t1 = time;
+        //int t = (int)time;
+        //double t1 = time;
         //Debug.Log(t);
         timeUI.text = time.ToString("F1");
+    }
+
+    public void ShowX2UI(bool show)
+    {
+        //Debug.Log(t);
+        X2GO.SetActive(show);
     }
 }
