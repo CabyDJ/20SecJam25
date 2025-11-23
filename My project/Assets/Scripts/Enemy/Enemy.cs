@@ -50,8 +50,32 @@ public class Enemy : MonoBehaviour
     float rageValue = 0;
     bool isPlayerNear = false;
     bool canThrow = false;
-    bool isRage = false;
-    bool isTaunted = false;
+    //bool isRage = false;
+    public bool isRage
+    {
+        get { return _isRage; }
+        set
+        {
+            _isRage = value;
+            CalculateFinalMoveSpeed();
+            CalculateFinalThrowSpeed();
+            CalculateMaxBurstShots();
+        }
+    }
+    [SerializeField]
+    private bool _isRage; 
+    public bool isTaunt
+    {
+        get { return _isTaunt; }
+        set
+        {
+            _isTaunt = value;
+            CalculateMaxBurstShots();
+        }
+    }
+    [SerializeField]
+    private bool _isTaunt;
+    //bool isTaunt = false;
     bool rageBonus = false;
 
 
@@ -65,6 +89,10 @@ public class Enemy : MonoBehaviour
         moveDir = Vector2.zero;
         //InvokeRepeating(nameof(ThrowProjectile), 2f, throwTime);
         //StartCoroutine(HalfTimeBonus());
+        //CalculateFinalMoveSpeed();
+        //CalculateFinalThrowSpeed();
+        isRage = false;
+        isTaunt = false;
     }
 
     void Update()
@@ -73,8 +101,8 @@ public class Enemy : MonoBehaviour
 
         CheckPlayerIsNear();
 
-        CalculateFinalMoveSpeed();
-        CalculateFinalThrowSpeed();
+        //CalculateFinalMoveSpeed();
+        //CalculateFinalThrowSpeed();
 
         ThrowTimer();
     }
@@ -111,7 +139,7 @@ public class Enemy : MonoBehaviour
 
     private void ThrowBurst()
     {
-        CalculateMaxBurstShots();
+        //CalculateMaxBurstShots();
 
         //Proyectile p = Instantiate(projectile, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
         //p.player = player;
@@ -151,7 +179,7 @@ public class Enemy : MonoBehaviour
 
     private void ChangeRageValue(float value)
     {
-        if (isTaunted && value > 0)
+        if (isTaunt && value > 0)
             value *= 2f;
 
         rageValue += value;
@@ -178,12 +206,15 @@ public class Enemy : MonoBehaviour
                 rageBonus = true;
                 GameManager.instance.ChangeScore(rageScore);
             }
-
+            //CalculateFinalMoveSpeed();
+            //CalculateFinalThrowSpeed();
         }
         else if (isRage && rageValue <= 0)
         {
             GameManager.instance.SetDoubleScore(false);
             isRage = false;
+            //CalculateFinalMoveSpeed();
+            //CalculateFinalThrowSpeed();
         }
     }
 
@@ -215,13 +246,13 @@ public class Enemy : MonoBehaviour
             maxBurstShots += rageBurstShots;
         }
 
-        if (isTaunted)
+        if (isTaunt)
             maxBurstShots += tauntBurstShots;
     }
 
     public void StartTaunted()
     {
-        if(!isTaunted)
+        if(!isTaunt)
             StartCoroutine(StartTauntTime());
     }
 
@@ -231,10 +262,10 @@ public class Enemy : MonoBehaviour
         burstTime = rapidBurstTime;
         //ResetThrowValues();
 
-        isTaunted = true;
+        isTaunt = true;
         tauntBar.gameObject.SetActive(true);
         yield return new WaitForSeconds(tauntCooldown);
-        isTaunted = false;
+        isTaunt = false;
         tauntBar.gameObject.SetActive(false);
     }
 
