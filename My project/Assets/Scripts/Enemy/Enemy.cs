@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
     GameObject player;
     [SerializeField]
     RageBar rageBar;
+    [SerializeField]
+    Canvas tauntBar;
 
     Vector3 moveDir;
     [SerializeField]
@@ -18,6 +20,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     float baseThrowTime = 2f; //throw projectile every X seconds
     float time = 0;
+    float burstTime = 0;
+    [SerializeField]
+    float rapidBurstTime = 0.25f;
+    float burstShots = 0;
+    float maxBurstShots = 1;
 
     float moveSpeedBonus = 1f;
     float throwTimeBonus = 1f;
@@ -29,10 +36,23 @@ public class Enemy : MonoBehaviour
     float totalMoveSpeedBonus = 1;
     [SerializeField]
     float totalThrowSpeedBonus = 1;
+    [SerializeField]
+    int rageBurstShots = 1;
+    [SerializeField]
+    int tauntBurstShots = 1;
+    [SerializeField]
+    float baseBurstShots = 1;
+    [SerializeField]
+    float tauntCooldown = 4;
+    [SerializeField]
+    int rageScore = 150;
 
     float rageValue = 0;
     bool isPlayerNear = false;
+    bool canThrow = false;
     bool isRage = false;
+    bool isTaunted = false;
+    bool rageBonus = false;
 
 
     private void Awake()
@@ -44,22 +64,19 @@ public class Enemy : MonoBehaviour
     {
         moveDir = Vector2.zero;
         //InvokeRepeating(nameof(ThrowProjectile), 2f, throwTime);
-        StartCoroutine(HalfTimeBonus());
+        //StartCoroutine(HalfTimeBonus());
     }
 
     void Update()
     {
-        ThrowTimer();
-
         moveDir = (player.transform.position - transform.position).normalized;
 
-        if (isPlayerNear)
-            ChangeRageValue(0.1f);
-        else
-            ChangeRageValue(-0.02f);
+        CheckPlayerIsNear();
 
         CalculateFinalMoveSpeed();
         CalculateFinalThrowSpeed();
+
+        ThrowTimer();
     }
 
     private void FixedUpdate()
@@ -67,31 +84,76 @@ public class Enemy : MonoBehaviour
         rb.AddForce(moveDir * (/*moveSpeed **/ totalMoveSpeedBonus/*moveSpeedBonus*/));
     }
 
+    private void CheckPlayerIsNear()
+    {
+        if (isPlayerNear)
+            ChangeRageValue(0.4f);
+        else
+            ChangeRageValue(-0.03f);
+    }
+
     private void ThrowTimer()
     {
         time += Time.deltaTime;
 
-        if (time >= (/*baseThrowTime -*/ totalThrowSpeedBonus))
+        if (/*burstsShot < 3 &&*/ time >= (/*baseThrowTime -*/ totalThrowSpeedBonus))
         {
-            ThrowProjectile();
-            time = 0;
+            //ThrowBurst();
+            //time = 0;
+            canThrow = true;
+        }
+
+        if (canThrow)
+        {
+            ThrowBurst();
         }
     }
 
-    private void ThrowProjectile()
+    private void ThrowBurst()
+    {
+        CalculateMaxBurstShots();
+
+        //Proyectile p = Instantiate(projectile, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
+        //p.player = player;
+        burstTime += Time.deltaTime;
+
+        if (/*burstsShot < 3 && */burstTime >= (/*baseThrowTime -*/ rapidBurstTime))
+        {
+            ThrowProjectile();
+            burstTime = 0;
+            burstShots++;
+        }
+        else if(burstShots >= maxBurstShots)
+        {
+            ResetThrowValues();
+        }
+    }
+
+    private void ResetThrowValues()
+    {
+        time = 0;
+        burstTime = 0;
+        burstShots = 0;
+        canThrow = false;
+    }
+
+    public void ThrowProjectile()
     {
         Proyectile p = Instantiate(projectile, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
         p.player = player;
     }
 
-    private IEnumerator HalfTimeBonus()
-    {
-        yield return new WaitForSeconds(10);
-        moveSpeedBonus += 0.5f;
-    }
+    //private IEnumerator HalfTimeBonus()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    moveSpeedBonus += 0.5f;
+    //}
 
     private void ChangeRageValue(float value)
     {
+        if (isTaunted && value > 0)
+            value *= 2f;
+
         rageValue += value;
 
         if (rageValue > 100)
@@ -107,12 +169,18 @@ public class Enemy : MonoBehaviour
 
     private void CheckRageDoubleScore()
     {
-        if (!isRage && rageValue >= 50)
+        if (!isRage && rageValue >= 100)
         {
             GameManager.instance.SetDoubleScore(true);
             isRage = true;
+            if (!rageBonus)
+            {
+                rageBonus = true;
+                GameManager.instance.ChangeScore(rageScore);
+            }
+
         }
-        else if (isRage && rageValue < 50)
+        else if (isRage && rageValue <= 0)
         {
             GameManager.instance.SetDoubleScore(false);
             isRage = false;
@@ -137,6 +205,37 @@ public class Enemy : MonoBehaviour
         {
             totalThrowSpeedBonus -= (baseThrowTime * rageThrowSpeedMultiplier) - baseThrowTime;
         }
+    }
+
+    private void CalculateMaxBurstShots()
+    {
+        maxBurstShots = baseBurstShots;
+        if (isRage)
+        {
+            maxBurstShots += rageBurstShots;
+        }
+
+        if (isTaunted)
+            maxBurstShots += tauntBurstShots;
+    }
+
+    public void StartTaunted()
+    {
+        if(!isTaunted)
+            StartCoroutine(StartTauntTime());
+    }
+
+    private IEnumerator StartTauntTime()
+    {
+        time = totalThrowSpeedBonus;
+        burstTime = rapidBurstTime;
+        //ResetThrowValues();
+
+        isTaunted = true;
+        tauntBar.gameObject.SetActive(true);
+        yield return new WaitForSeconds(tauntCooldown);
+        isTaunted = false;
+        tauntBar.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

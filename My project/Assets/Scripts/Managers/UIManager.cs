@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //Time.timeScale = 0.25f;
     }
 
     public void UpdateScoreUI(int score)

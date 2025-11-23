@@ -506,10 +506,21 @@
                 {
                     "name": "",
                     "id": "8d332794-2759-4782-a5bb-aca19d0dd327",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "Taunt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7304cc75-5e4f-4bf6-83b1-a85517499443",
+                    "path": "<Keyboard>/z",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Taunt",
                     "isComposite": false,
                     "isPartOfComposite": false

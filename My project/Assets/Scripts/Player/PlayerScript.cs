@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    public PlayerInputHandler inputHandler;
+    private PlayerInputHandler inputHandler;
     private Vector2 movement = Vector2.down;
     public float moveSpeed = 50f;
     public float dashImpulse = 150f;
@@ -16,11 +16,15 @@ public class PlayerScript : MonoBehaviour
     public float stunTime = 0.5f;
     [SerializeField]
     private float hitTimePenalty = 2;
+    [SerializeField]
+    private GameObject enemyGO;
+    private Enemy enemy;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputHandler = GetComponent<PlayerInputHandler>();
+        enemy = enemyGO.GetComponent<Enemy>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +47,13 @@ public class PlayerScript : MonoBehaviour
         if (dashReady && inputHandler.DashInput)
         {
             StartDash();
+        }
+
+        if (inputHandler.TauntInput)
+        {
+            //enemy.ThrowProjectile();
+            enemy.StartTaunted();
+            inputHandler.SetTaunt(false);
         }
 
     }
