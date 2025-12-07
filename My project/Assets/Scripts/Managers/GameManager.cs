@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     float timeLimit = 0;
     bool doubleScore = false;
 
+    [SerializeField]
+    public static int finalScore;
     public int score
     {
         get { return _score; }
@@ -61,7 +63,9 @@ public class GameManager : MonoBehaviour
         if (time <= timeLimit)
         {
             Debug.Log("Time out!");
-            // Do what you want
+
+            finalScore = score;
+            LoadScoreScene();
         }
     }
 
@@ -90,5 +94,10 @@ public class GameManager : MonoBehaviour
     {
         string currentSceneName = SceneManager.GetActiveScene().name;//Put scene name instead
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void LoadScoreScene()
+    {
+        SceneManager.LoadScene("ScoreScene");
     }
 }
