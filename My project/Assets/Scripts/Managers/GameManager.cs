@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -62,10 +63,11 @@ public class GameManager : MonoBehaviour
 
         if (time <= timeLimit)
         {
+            time = 0;
             Debug.Log("Time out!");
 
             finalScore = score;
-            LoadScoreScene();
+            StartCoroutine(StartSlowmo());
         }
     }
 
@@ -99,5 +101,20 @@ public class GameManager : MonoBehaviour
     public void LoadScoreScene()
     {
         SceneManager.LoadScene("ScoreScene");
+    }
+
+    private void SetTimeScale(float value)
+    {
+        Time.timeScale = value;
+    }
+
+    private IEnumerator StartSlowmo()
+    {
+        SetTimeScale(0.4f);
+        yield return new WaitForSecondsRealtime(1f);
+        SetTimeScale(0.2f);
+        yield return new WaitForSecondsRealtime(1f);
+        LoadScoreScene();
+        SetTimeScale(1f);
     }
 }
