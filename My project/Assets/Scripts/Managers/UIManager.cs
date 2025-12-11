@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateScoreUI(int score)
     {
-        Debug.Log(score);
+        //Debug.Log(score);
         scoreUI.text = score.ToString();
     }
 

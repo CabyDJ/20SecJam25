@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     float timeLimit = 0;
     bool doubleScore = false;
+    [SerializeField]
+    public bool isGameOver;
 
     [SerializeField]
     public static int finalScore;
@@ -52,7 +54,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         score = 0;
-        time = 20;
+        time = 20; 
+        isGameOver = false;
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
         if (time <= timeLimit)
         {
             time = 0;
+            isGameOver = true;
             Debug.Log("Time out!");
 
             finalScore = score;
@@ -73,12 +77,15 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(int value)
     {
-        int v = value;
+        if (!isGameOver)
+        {
+            int v = value;
 
-        if (doubleScore)
-            v = v * 2;
+            if (doubleScore)
+                v = v * 2;
 
-        score += v;
+            score += v;
+        }
     }
 
     public void SetDoubleScore(bool x2)

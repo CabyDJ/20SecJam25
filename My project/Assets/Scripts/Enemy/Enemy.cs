@@ -114,10 +114,11 @@ public class Enemy : MonoBehaviour
 
     private void CheckPlayerIsNear()
     {
+        Debug.Log(Time.deltaTime);
         if (isPlayerNear)
-            ChangeRageValue(0.4f);
-        else
-            ChangeRageValue(-0.03f);
+            ChangeRageValue(110f * Time.deltaTime);
+        else if (!isPlayerNear)
+            ChangeRageValue(-15f * Time.deltaTime);
     }
 
     private void ThrowTimer()

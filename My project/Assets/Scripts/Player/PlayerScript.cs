@@ -35,25 +35,29 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inputHandler.MoveInput != Vector2.zero)
+        if (!GameManager.instance.isGameOver)
         {
-            movement = inputHandler.MoveInput;
-        }
-        //movement = inputHandler.MoveInput;
 
-        //if (!isStunned)
-        //    rb.AddForce(movement * moveSpeed);
+            if (inputHandler.MoveInput != Vector2.zero)
+            {
+                movement = inputHandler.MoveInput;
+            }
+            //movement = inputHandler.MoveInput;
 
-        if (dashReady && inputHandler.DashInput)
-        {
-            StartDash();
-        }
+            //if (!isStunned)
+            //    rb.AddForce(movement * moveSpeed);
 
-        if (inputHandler.TauntInput)
-        {
-            //enemy.ThrowProjectile();
-            enemy.StartTaunted();
-            inputHandler.SetTaunt(false);
+            if (dashReady && inputHandler.DashInput)
+            {
+                StartDash();
+            }
+
+            if (inputHandler.TauntInput)
+            {
+                //enemy.ThrowProjectile();
+                enemy.StartTaunted();
+                inputHandler.SetTaunt(false);
+            }
         }
 
     }
