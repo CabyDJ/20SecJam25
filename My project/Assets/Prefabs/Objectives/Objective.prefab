@@ -164,7 +164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcf7c21b5b59b2f438132e441bf2a71e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Objective
+  score: 100
   hp: 1
+  canDestroy: 0
 --- !u!1 &5733876486453015380
 GameObject:
   m_ObjectHideFlags: 0

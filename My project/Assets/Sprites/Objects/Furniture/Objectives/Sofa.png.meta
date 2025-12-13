@@ -116,10 +116,10 @@ TextureImporter:
       name: Sofa_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 3
-        width: 114
-        height: 76
+        x: 44
+        y: 64
+        width: 184
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

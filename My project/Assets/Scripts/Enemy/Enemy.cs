@@ -10,8 +10,9 @@ public class Enemy : MonoBehaviour
     RageBar rageBar;
     [SerializeField]
     Canvas tauntBar;
+    private Animator animator;
 
-    Vector3 moveDir;
+    public Vector3 moveDir;
     [SerializeField]
     GameObject projectile;
 
@@ -82,6 +83,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -105,6 +107,8 @@ public class Enemy : MonoBehaviour
         //CalculateFinalThrowSpeed();
 
         ThrowTimer();
+
+        AnimationChanges();
     }
 
     private void FixedUpdate()
@@ -112,9 +116,15 @@ public class Enemy : MonoBehaviour
         rb.AddForce(moveDir * (/*moveSpeed **/ totalMoveSpeedBonus/*moveSpeedBonus*/));
     }
 
+    private void AnimationChanges()
+    {
+        animator.SetFloat("X", moveDir.x);
+        animator.SetFloat("Y", moveDir.y);
+    }
+
     private void CheckPlayerIsNear()
     {
-        Debug.Log(Time.deltaTime);
+        //Debug.Log(Time.deltaTime);
         if (isPlayerNear)
             ChangeRageValue(110f * Time.deltaTime);
         else if (!isPlayerNear)
@@ -170,6 +180,8 @@ public class Enemy : MonoBehaviour
     {
         Proyectile p = Instantiate(projectile, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
         p.player = player;
+        animator.SetBool("isThrowing", true);
+        animator.SetFloat("Throw", 1);
     }
 
     //private IEnumerator HalfTimeBonus()

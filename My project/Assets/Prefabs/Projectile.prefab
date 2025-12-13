@@ -78,7 +78,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 0.7023342, g: 0.78113204, b: 0.21075822, a: 1}
   m_FlipX: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0bd3eb99122ba4ebc149a66d566a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Proyectile
-  speed: 40
+  speed: 30
   player: {fileID: 4509255176993893598, guid: 1e4abbe92a4e65b4e92e7294fe62fa67, type: 3}
 --- !u!50 &7391963601380315510
 Rigidbody2D:
