@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1c6c7266b1974fe4d944b1d01508f1cf
+guid: 8e3f8844b1ce9b548be2f277249185d0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5019641950302597139
-    second: Photo_0
+      213: -7074131444244492160
+    second: GroundTest7_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo_0
+      name: GroundTest7_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 42
-        width: 34
-        height: 44
+        x: 41
+        y: 18
+        width: 46
+        height: 46
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3107f6332c959a540800000000000000
-      internalID: 5019641950302597139
+      spriteID: 080d26b8ee2a3dd90800000000000000
+      internalID: -7074131444244492160
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aa0e98503453a2e4b97087e91b350556
+    spriteID: 47af31123facdf64d8d3a312126b4b82
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Photo_0: 5019641950302597139
+      GroundTest7_0: -7074131444244492160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1c6c7266b1974fe4d944b1d01508f1cf
+guid: e5c7a4bbe7e03044795eec1a5d2bcafe
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5019641950302597139
-    second: Photo_0
+      213: 199249360466117110
+    second: Floor_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Photo_0
+      name: Floor_0
       rect:
         serializedVersion: 2
-        x: 51
-        y: 42
-        width: 34
-        height: 44
+        x: 41
+        y: 48
+        width: 46
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3107f6332c959a540800000000000000
-      internalID: 5019641950302597139
+      spriteID: 6f18e48dc30e3c200800000000000000
+      internalID: 199249360466117110
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: aa0e98503453a2e4b97087e91b350556
+    spriteID: 9fb55da593c90a642b0329176de73f48
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Photo_0: 5019641950302597139
+      Floor_0: 199249360466117110
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
