@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
-    private Vector2 movement = Vector2.down;
+    private Vector2 movement = Vector2.left;
     public float moveSpeed = 50f;
     public float dashImpulse = 150f;
     public float dashCooldown = 2f;
@@ -19,6 +19,10 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private GameObject enemyGO;
     private Enemy enemy;
+    [SerializeField]
+    private SpriteRenderer sprite;
+    [SerializeField]
+    private Animator animator;
 
     void Awake()
     {
@@ -62,6 +66,8 @@ public class PlayerScript : MonoBehaviour
             inputHandler.SetTaunt(false);
         }
 
+        CheckFlipSprite();
+
     }
 
     private void FixedUpdate()
@@ -91,6 +97,20 @@ public class PlayerScript : MonoBehaviour
         isStunned = true;
         yield return new WaitForSeconds(stunTime);
         isStunned = false;
+    }
+
+    private void CheckFlipSprite()
+    {
+        animator.SetFloat("Y", movement.y);
+
+        if (movement.x < 0)
+        {
+            sprite.flipX = false;
+        }
+        else
+        {
+            sprite.flipX = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
