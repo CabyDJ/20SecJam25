@@ -524,6 +524,17 @@
                     "action": "Taunt",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b129b06a-3408-4736-b0ea-f19c3eccb9c6",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR;Gamepad",
+                    "action": "Taunt",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
