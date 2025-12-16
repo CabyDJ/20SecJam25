@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject uiManagerGO;
     private UIManager uiManager;
+    [SerializeField]
+    private FadeInOut fade;
 
     float timeLimit = 0;
     bool doubleScore = false;
@@ -53,9 +55,12 @@ public class GameManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Application.targetFrameRate = 60;
         score = 0;
         time = 20; 
         isGameOver = false;
+
+        fade.StartFadeOut();
     }
 
     // Update is called once per frame
@@ -64,14 +69,19 @@ public class GameManager : MonoBehaviour
         time -= Time.deltaTime;
         //Debug.Log(time);
 
-        if (time <= timeLimit)
+        if ( time <= timeLimit)
         {
             time = 0;
-            isGameOver = true;
-            Debug.Log("Time out!");
+            //Debug.Log("Time out!");
 
             finalScore = score;
-            StartCoroutine(StartSlowmo());
+
+            if (!isGameOver)
+            {
+                StartCoroutine(StartSlowmo());
+            }
+
+            isGameOver = true;
         }
     }
 
@@ -118,6 +128,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator StartSlowmo()
     {
         SetTimeScale(0.4f);
+        fade.StartFadeIn();
         yield return new WaitForSecondsRealtime(1f);
         SetTimeScale(0.2f);
         yield return new WaitForSecondsRealtime(1f);

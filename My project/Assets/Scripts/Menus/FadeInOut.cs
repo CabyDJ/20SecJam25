@@ -1,0 +1,87 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class FadeInOut : MonoBehaviour
+{
+    Image img;
+    bool isFadingIn;
+    bool isFadingOut;
+    public float fadeTime = 2f;
+    private float currentFadingTime = 0f;
+    private float fadePercentage = 0f;
+
+    Color startColor;
+    Color targetColor;
+
+    private void Awake()
+    {
+        img = GetComponent<Image>();
+    }
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        StartFadeOut();
+    }
+
+    public void StartFadeOut()
+    {
+        img.enabled = true;
+        startColor = new Color(img.color.r, img.color.g, img.color.b, 1);
+        targetColor = new Color(img.color.r, img.color.g, img.color.b, 0);
+
+        isFadingOut = true;
+    }
+
+    public void StartFadeIn()
+    {
+        img.enabled = true;
+        startColor = new Color(img.color.r, img.color.g, img.color.b, 0);
+        targetColor = new Color(img.color.r, img.color.g, img.color.b, 1);
+
+        isFadingIn = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isFadingOut)
+        {
+            fadePercentage = currentFadingTime / fadeTime;
+            Debug.Log(fadePercentage);
+
+            img.color = Color.Lerp(startColor, targetColor, fadePercentage);
+
+            if(fadePercentage >= 1)
+            {
+                //img.enabled = false;
+                isFadingOut = false;
+                fadePercentage = 0;
+                currentFadingTime = 0;
+            }
+            currentFadingTime += Time.deltaTime;
+        }
+        else if (isFadingIn)
+        {
+            fadePercentage = currentFadingTime / fadeTime;
+            Debug.Log(fadePercentage);
+
+            img.color = Color.Lerp(startColor, targetColor, fadePercentage);
+
+            if (fadePercentage >= 1)
+            {
+                //img.enabled = false;
+                isFadingIn = false;
+                fadePercentage = 0;
+                currentFadingTime = 0;
+            }
+            currentFadingTime += Time.deltaTime;
+        }
+    }
+
+    //private IEnumerator StartFade()
+    //{
+    //    yield return new WaitForSeconds();
+    //}
+}

@@ -152,6 +152,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Proyectile
   speed: 30
   player: {fileID: 4509255176993893598, guid: 1e4abbe92a4e65b4e92e7294fe62fa67, type: 3}
+  HitGO: {fileID: 6597118035947094968, guid: a320cb79f4dabdd468ca118f2a6e90f0, type: 3}
+  PointsGO: {fileID: 6388322989688678234, guid: c18353dd8f874d642831512b3183f0dc, type: 3}
 --- !u!50 &7391963601380315510
 Rigidbody2D:
   serializedVersion: 5
