@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 
 public class PlayerScript : MonoBehaviour
 {
 
     private Rigidbody2D rb;
     private PlayerInputHandler inputHandler;
+
     private Vector2 movement = Vector2.left;
     public float moveSpeed = 50f;
     public float dashImpulse = 150f;
@@ -23,12 +25,14 @@ public class PlayerScript : MonoBehaviour
     private SpriteRenderer sprite;
     [SerializeField]
     private Animator animator;
+    private CinemachineImpulseSource impulseSource;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputHandler = GetComponent<PlayerInputHandler>();
         enemy = enemyGO.GetComponent<Enemy>();
+        impulseSource = GetComponent<CinemachineImpulseSource>();
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -113,15 +117,23 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    private void GetHit(Vector2 dir)
+    {
+
+        rb.linearVelocity = Vector2.zero;
+        StartCoroutine(StartStunnedCD());
+        rb.AddForce(-dir * 200, ForceMode2D.Impulse);
+
+        CameraShakeManager.instance.CameraShake(impulseSource, dir);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
             //Debug.Log("HIT PLAYER");
-            Vector2 dir = (collision.gameObject.transform.position - transform.position).normalized;
-            rb.linearVelocity = Vector2.zero;
-            StartCoroutine(StartStunnedCD());
-            rb.AddForce(-dir * 200, ForceMode2D.Impulse);
+            Vector2 dir = (collision.gameObject.transform.position - transform.position).normalized; 
+            GetHit(dir);
         }
     }
 }
