@@ -49,7 +49,7 @@ public class FadeInOut : MonoBehaviour
         if (isFadingOut)
         {
             fadePercentage = currentFadingTime / fadeTime;
-            Debug.Log(fadePercentage);
+            //Debug.Log(fadePercentage);
 
             img.color = Color.Lerp(startColor, targetColor, fadePercentage);
 
@@ -65,7 +65,7 @@ public class FadeInOut : MonoBehaviour
         else if (isFadingIn)
         {
             fadePercentage = currentFadingTime / fadeTime;
-            Debug.Log(fadePercentage);
+            //Debug.Log(fadePercentage);
 
             img.color = Color.Lerp(startColor, targetColor, fadePercentage);
 

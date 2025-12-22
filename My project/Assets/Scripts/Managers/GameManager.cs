@@ -87,15 +87,12 @@ public class GameManager : MonoBehaviour
 
     public void ChangeScore(int value)
     {
-        if (!isGameOver)
-        {
-            int v = value;
+        int v = value;
 
-            if (doubleScore)
-                v = v * 2;
+        if (doubleScore)
+            v = v * 2;
 
-            score += v;
-        }
+        score += v;
     }
 
     public void SetDoubleScore(bool x2)
@@ -107,6 +104,7 @@ public class GameManager : MonoBehaviour
     public void ReduceTimer(float t)
     {
         time -= t;
+        uiManager.ShowTimeReduction();
     }
 
     public void LoadGame()

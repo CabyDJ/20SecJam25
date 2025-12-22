@@ -117,7 +117,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Projectile"))
         {
-            Debug.Log("HIT PLAYER");
+            //Debug.Log("HIT PLAYER");
             Vector2 dir = (collision.gameObject.transform.position - transform.position).normalized;
             rb.linearVelocity = Vector2.zero;
             StartCoroutine(StartStunnedCD());

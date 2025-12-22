@@ -18,6 +18,13 @@ public class Objective : MonoBehaviour
     [SerializeField]
     private GameObject HitGO;
 
+    private ShakeController shakeCont;
+
+    private void Awake()
+    {
+        shakeCont = GetComponentInChildren<ShakeController>();
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,10 +36,12 @@ public class Objective : MonoBehaviour
         //GameObject go = Instantiate(HitGO);
         //go.transform.position = pos;
 
-        GameObject go2 = Instantiate(PointsGO);
-        go2.transform.position = pos;
-        ShowPoints sp = go2.GetComponent<ShowPoints>();
+        GameObject pointsGO = Instantiate(PointsGO);
+        pointsGO.transform.position = pos;
+        ShowPoints sp = pointsGO.GetComponent<ShowPoints>();
         sp.SetPoints(score);
+
+        shakeCont.SetShake();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

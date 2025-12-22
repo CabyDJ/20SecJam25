@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,12 +14,17 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject X2GO;
     private TMP_Text X2UI;
+    [SerializeField]
+    private GameObject TimeReductionGO;
+    Coroutine timeReductCoroutine;
+    Animator timeReductAnim;
 
     void Awake()
     {
         scoreUI = scoreGO.GetComponent<TMP_Text>();
         timeUI = timeGO.GetComponent<TMP_Text>();
         X2UI = X2GO.GetComponent<TMP_Text>();
+        timeReductAnim = TimeReductionGO.GetComponent<Animator>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -51,5 +57,22 @@ public class UIManager : MonoBehaviour
     {
         //Debug.Log(t);
         X2GO.SetActive(show);
+    }
+
+    public void ShowTimeReduction()
+    {
+        TimeReductionGO.SetActive(true);
+        timeReductAnim.Play("HitReduceTimer", 0, 0f);
+
+        if (timeReductCoroutine != null)
+            StopCoroutine(timeReductCoroutine);
+
+        timeReductCoroutine = StartCoroutine(HideTimeReduction());
+    }
+
+    private IEnumerator HideTimeReduction()
+    {
+        yield return new WaitForSeconds(1.5f);
+        TimeReductionGO.SetActive(false);
     }
 }

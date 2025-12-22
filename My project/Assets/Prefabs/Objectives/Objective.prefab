@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1172886769357079116}
   - component: {fileID: 7756121228582157715}
+  - component: {fileID: 3334481026077109684}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -90,6 +91,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3334481026077109684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062870963033429592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df6b836400c52c144905dc6e0de4f2d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShakeController
+  isShaking: 0
+  shakeTime: 0.3
+  shakeAmount: 0.3
 --- !u!1 &5364383411670292965
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Objective
   score: 100
+  scoreOnBreak: 0
   hp: 1
   canDestroy: 0
   PointsGO: {fileID: 6388322989688678234, guid: c18353dd8f874d642831512b3183f0dc, type: 3}
