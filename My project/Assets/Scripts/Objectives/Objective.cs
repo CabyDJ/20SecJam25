@@ -17,6 +17,8 @@ public class Objective : MonoBehaviour
     private GameObject PointsGO;
     [SerializeField]
     private GameObject HitGO;
+    [SerializeField]
+    private ParticleSystem particlesSys;
 
     private ShakeController shakeCont;
 
@@ -84,7 +86,11 @@ public class Objective : MonoBehaviour
     {
         score = score / 4;
         //change sprite or disable hitbox or whatever
-        if (canDestroy) 
+        if (canDestroy)
+        {
+            particlesSys.transform.parent = null;
+            particlesSys.Play();
             Destroy(gameObject);
+        }
     }
 }
