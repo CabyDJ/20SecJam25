@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using System.Drawing;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -8,40 +9,65 @@ public class Objective : MonoBehaviour
     public int score = 100; 
     [SerializeField]
     public int scoreOnBreak = 0;
+    private int scoreThisHit = 0;
     [SerializeField]
     private int hp = 1;
+    private int maxHp;
     [SerializeField]
     private bool canDestroy = false;
-    private bool isDestroyed = false;
+    private bool _isDestroyed = false;
+    public bool isDestroyed { 
+        get 
+        { 
+            return _isDestroyed; 
+        }
+        set
+        {
+            _isDestroyed = value;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(isDestroyed)));
+        } 
+    }
     [SerializeField]
     private GameObject PointsGO;
     [SerializeField]
     private GameObject HitGO;
     [SerializeField]
     private ParticleSystem particlesSys;
+    [SerializeField]
+    private SpriteRenderer spriteRenderer;
+    [SerializeField]
+    private Sprite[] damageSprites;
+    [SerializeField]
+    private GameObject colliderGO;
+    private Collider2D coll2d;
 
     private ShakeController shakeCont;
+    [HideInInspector]
+    public event PropertyChangedEventHandler PropertyChanged;
 
     private void Awake()
     {
         shakeCont = GetComponentInChildren<ShakeController>();
+        coll2d = colliderGO.GetComponent<Collider2D>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        maxHp = hp;
     }
 
     private void ShowHitEffects(Vector3 pos)
     {
         //GameObject go = Instantiate(HitGO);
         //go.transform.position = pos;
-
-        GameObject pointsGO = Instantiate(PointsGO);
-        pointsGO.transform.position = pos;
-        ShowPoints sp = pointsGO.GetComponent<ShowPoints>();
-        sp.SetPoints(score);
+        if (!isDestroyed)
+        {
+            GameObject pointsGO = Instantiate(PointsGO);
+            pointsGO.transform.position = pos;
+            ShowPoints sp = pointsGO.GetComponent<ShowPoints>();
+            sp.SetPoints(/*score*/ scoreThisHit);
+        }
 
         shakeCont.SetShake();
     }
@@ -51,26 +77,31 @@ public class Objective : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile")) 
         {
             //Debug.Log("+ SCORE");
-            GameManager.instance.ChangeScore(score);
-            ShowHitEffects(collision.gameObject.transform.position);
-            TakeDamage();
+            //GameManager.instance.ChangeScore(score);
+            TakeDamage(collision.gameObject.transform.position);
         }
     }
 
-    private void TakeDamage()
+    private void TakeDamage(Vector3 pos)
     {
         hp--;
-        //score = (int)(score * 0.9);
 
-        if (hp == 1 && scoreOnBreak != 0)
-        {
-            score = scoreOnBreak;
-        }
-
-        if(score < 0)
-            score = 0;
-
+        UpdateScore();
+        ShowHitEffects(pos);
         CheckDestroyed();
+        ChangeSprite();
+    }
+
+    private void UpdateScore()
+    {
+        if (!isDestroyed && scoreOnBreak == 0)
+            scoreThisHit = score;
+        else if (!isDestroyed && hp <= 0 && scoreOnBreak != 0)
+            scoreThisHit = scoreOnBreak;
+        else
+            scoreThisHit = 0;
+
+        GameManager.instance.ChangeScore(scoreThisHit);
     }
 
     private void CheckDestroyed()
@@ -84,13 +115,25 @@ public class Objective : MonoBehaviour
 
     private void StartDestroy()
     {
-        score = score / 4;
-        //change sprite or disable hitbox or whatever
+        particlesSys.Play();
         if (canDestroy)
         {
-            particlesSys.transform.parent = null;
-            particlesSys.Play();
-            Destroy(gameObject);
+            //particlesSys.transform.parent = null;
+            //Destroy(gameObject);
+            //coll2d.enabled = false;
+            coll2d.isTrigger = true;
+        }
+
+    }
+
+    private void ChangeSprite()
+    {
+        if (damageSprites.Length > 0)
+        {
+            if (hp <= 0)
+            {
+                spriteRenderer.sprite = damageSprites[0];
+            }
         }
     }
 }

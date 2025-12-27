@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,6 +10,8 @@ public class TVAnimationsController : MonoBehaviour
     Animator animator;
     Coroutine cor;
     Objective objective;
+
+    public GameObject brokenScreenGO;
 
     public class TVAnimation
     {
@@ -44,6 +47,7 @@ public class TVAnimationsController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        objective.PropertyChanged += BoolChangedEvent;
         StartRandomAnim();
     }
 
@@ -76,9 +80,19 @@ public class TVAnimationsController : MonoBehaviour
         StartRandomAnim();
     }
 
-    public void PlayOffAnimation()//call when destroyed
+    //public void PlayOffAnimation()//call when destroyed
+    //{
+    //    StopCoroutine(cor);
+    //    animator.Play("TVOff");
+    //}
+
+    public void StartBrokenScreen()
     {
-        StopCoroutine(cor);
-        animator.Play("TVOff");
+        brokenScreenGO.SetActive(true);
+    }
+
+    private void BoolChangedEvent(object sender, PropertyChangedEventArgs args)
+    {
+        StartBrokenScreen();
     }
 }
