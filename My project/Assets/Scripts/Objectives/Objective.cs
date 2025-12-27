@@ -41,13 +41,15 @@ public class Objective : MonoBehaviour
     private GameObject colliderGO;
     private Collider2D coll2d;
 
+    [SerializeField]
     private ShakeController shakeCont;
     [HideInInspector]
     public event PropertyChangedEventHandler PropertyChanged;
 
     private void Awake()
     {
-        shakeCont = GetComponentInChildren<ShakeController>();
+        if(shakeCont == null)
+            shakeCont = GetComponentInChildren<ShakeController>();
         coll2d = colliderGO.GetComponent<Collider2D>();
     }
 
