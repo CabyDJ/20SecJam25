@@ -26,6 +26,10 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private Animator animator;
     private CinemachineImpulseSource impulseSource;
+    [SerializeField]
+    private ParticleSystem tauntParticle;
+    [SerializeField]
+    private DashController dashCont;
 
     void Awake()
     {
@@ -66,8 +70,7 @@ public class PlayerScript : MonoBehaviour
         if (inputHandler.TauntInput)
         {
             //enemy.ThrowProjectile();
-            enemy.StartTaunted();
-            inputHandler.SetTaunt(false);
+            StartTaunt();
         }
 
         CheckFlipSprite();
@@ -80,10 +83,19 @@ public class PlayerScript : MonoBehaviour
             rb.AddForce(movement * moveSpeed);
     }
 
+    private void StartTaunt()
+    {
+        tauntParticle.Play();
+        enemy.StartTaunted();
+        inputHandler.SetTaunt(false);
+    }
     private void StartDash()
     {
         rb.linearVelocity = Vector2.zero;
         rb.AddForce(movement * dashImpulse, ForceMode2D.Impulse);
+
+        dashCont.SetDash(transform.position, movement);
+
         StartCoroutine(StartDashCD());
         inputHandler.SetDash(false);
     }
