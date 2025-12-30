@@ -13,6 +13,14 @@ public class Proyectile : MonoBehaviour
     private GameObject PointsGO;
     [SerializeField]
     private GameObject HitGO;
+    [SerializeField]
+    private SpriteRenderer spriteRender;
+    [SerializeField]
+    private Collider2D col;
+    [SerializeField]
+    private TrailRenderer trail;
+    //[SerializeField]
+    //private Sprite[] sprites;
 
     private void Awake()
     {
@@ -23,8 +31,14 @@ public class Proyectile : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = (player.transform.position - transform.position).normalized;
-        rb.AddForce(direction * speed, ForceMode2D.Impulse);
+        //trail.emitting = false;
+        spriteRender.enabled = false;
+        col.enabled = false;
+        //rb.Sleep();
+        //direction = (player.transform.position - transform.position).normalized;
+        //rb.AddForce(direction * speed, ForceMode2D.Impulse);
+
+        //spriteRender.sprite = sprites[Random.Range(0, sprites.Length)];
     }
 
     // Update is called once per frame
@@ -36,6 +50,22 @@ public class Proyectile : MonoBehaviour
     private void FixedUpdate()
     {
         //rb.AddForce(direction * speed);
+    }
+
+    public Sprite GetSprite()
+    {
+        return spriteRender.sprite;
+    }
+
+    public void StartThrow()
+    {
+        //rb.simulated = true;
+        trail.Clear();
+        spriteRender.enabled = true;
+        col.enabled = true;
+
+        direction = (player.transform.position - transform.position).normalized;
+        rb.AddForce(direction * speed, ForceMode2D.Impulse);
     }
 
     private void SpawnEffect(Vector2 pos)

@@ -15,6 +15,11 @@ public class Enemy : MonoBehaviour
     public Vector3 moveDir;
     [SerializeField]
     GameObject projectile;
+    [SerializeField]
+    SpriteRenderer nextProjectileSprite;
+    private Proyectile nextProjectile;
+    [SerializeField]
+    GameObject[] projectiles;
 
     [SerializeField]
     float baseMoveSpeed = 15f;
@@ -79,6 +84,8 @@ public class Enemy : MonoBehaviour
     //bool isTaunt = false;
     bool rageBonus = false;
 
+    private Coroutine ProjectileSpriteCor;
+
 
     private void Awake()
     {
@@ -95,6 +102,7 @@ public class Enemy : MonoBehaviour
         //CalculateFinalThrowSpeed();
         isRage = false;
         isTaunt = false;
+        GenerateNextProjectile();
     }
 
     void Update()
@@ -139,7 +147,7 @@ public class Enemy : MonoBehaviour
         {
             //ThrowBurst();
             //time = 0;
-            canThrow = true;
+            canThrow = true; 
         }
 
         if (canThrow)
@@ -161,6 +169,8 @@ public class Enemy : MonoBehaviour
             ThrowProjectile();
             burstTime = 0;
             burstShots++;
+
+            GenerateNextProjectile();
         }
         else if(burstShots >= maxBurstShots)
         {
@@ -176,10 +186,34 @@ public class Enemy : MonoBehaviour
         canThrow = false;
     }
 
+    private void GenerateNextProjectile()
+    {
+        nextProjectile = Instantiate(projectiles[Random.Range(0, projectiles.Length)] /*projectile*/, /*transform.position, transform.rotation,*/ transform).GetComponent<Proyectile>();
+        nextProjectile.player = player;
+
+        nextProjectileSprite.sprite = nextProjectile.GetSprite();
+
+        if (ProjectileSpriteCor != null)
+            StopCoroutine(ProjectileSpriteCor);
+
+        ProjectileSpriteCor = StartCoroutine(ShowNextProjectileSprite());
+    }
+
+    private IEnumerator ShowNextProjectileSprite()
+    {
+        nextProjectileSprite.enabled = false;
+        yield return new WaitForSeconds(0.35f);
+        nextProjectileSprite.enabled = true;
+    }
+
     public void ThrowProjectile()
     {
-        Proyectile p = Instantiate(projectile, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
-        p.player = player;
+        //Proyectile p = Instantiate(projectiles[Random.Range(0, projectiles.Length)] /*projectile*/, transform.position, transform.rotation, transform.parent).GetComponent<Proyectile>();
+        //p.player = player;
+        nextProjectile.gameObject.transform.position = nextProjectileSprite.transform.position /*transform.position*/;
+        nextProjectile.StartThrow();
+        nextProjectileSprite.sprite = null;
+
         animator.SetBool("isThrowing", true);
         animator.SetFloat("Throw", 1);
     }

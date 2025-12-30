@@ -151,10 +151,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b0bd3eb99122ba4ebc149a66d566a04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Proyectile
-  speed: 30
+  speed: 35
   player: {fileID: 4509255176993893598, guid: 1e4abbe92a4e65b4e92e7294fe62fa67, type: 3}
   PointsGO: {fileID: 6388322989688678234, guid: c18353dd8f874d642831512b3183f0dc, type: 3}
   HitGO: {fileID: 6597118035947094968, guid: a320cb79f4dabdd468ca118f2a6e90f0, type: 3}
+  spriteRender: {fileID: 7381179124917274270}
+  col: {fileID: 5267365662431122908}
+  trail: {fileID: 3838671315646331037}
 --- !u!50 &7391963601380315510
 Rigidbody2D:
   serializedVersion: 5
@@ -372,7 +375,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6558621537086642732}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}

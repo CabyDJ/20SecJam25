@@ -53,7 +53,7 @@ public class ShakeController : MonoBehaviour
         //shakeAmount = amount;
 
         cor = StartCoroutine(ShakeTime());
-        Debug.Log("shake it boss " + transform.name);
+        //Debug.Log("shake it boss " + transform.name);
     }
 
     private IEnumerator ShakeTime()
