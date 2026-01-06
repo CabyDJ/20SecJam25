@@ -5,6 +5,8 @@ public class TutorialController : MonoBehaviour
 {
     [SerializeField]
     MainMenu menu;
+    [SerializeField]
+    MenuInputHandler playerInput;
     Animator anim;
     [SerializeField]
     Animator speechBubbleAnim;
@@ -30,6 +32,8 @@ public class TutorialController : MonoBehaviour
     Animator[] animatorsList;
 
     int currentControlTutorial = 0;
+    bool isTutoring;
+    bool canPressToContinue;
 
 
     private void Awake()
@@ -57,17 +61,29 @@ public class TutorialController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isTutoring)
+        {
+
+            if (canPressToContinue && (playerInput.SubmitInput || playerInput.ClickInput ))
+            {
+                ContinueTutorial();
+            }
+
+        }
     }
 
     public void StartTutorial()
     {
+        isTutoring = true;
         currentControlTutorial = 0;
         StartCoroutine(ShowSpeechBubble());
     }
-    public void StopTutorial()
+    public IEnumerator StopTutorial()
     {
+        yield return new WaitForSeconds(0.25f);
         HideSpeechBubble();
+        yield return new WaitForSeconds(0.25f);
+        isTutoring = false;
         menu.StopTutorial();
     }
 
@@ -93,14 +109,17 @@ public class TutorialController : MonoBehaviour
     {
         currentControlTutorial++;
 
-        if(currentControlTutorial > controlsList.Length - 1)
+        StartCoroutine(HideCurrentControls());
+
+        if (currentControlTutorial > controlsList.Length - 1)
         {
-            StopTutorial();
+            StartCoroutine(StopTutorial());
         }
-        else
-        {
-            StartCoroutine(ShowNextControls());
-        }
+        //else
+        //{
+        //    //StartCoroutine(ShowNextControls());
+        //    StartCoroutine(HideCurrentControls());
+        //}
     }
 
     private IEnumerator ShowNextControls()
@@ -111,22 +130,27 @@ public class TutorialController : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        canPressToContinue = true;
+
         if (currentControlTutorial < controlsList.Length - 1)
         {
             arrowGO.SetActive(true);
         }
-        
-        yield return new WaitForSeconds(4.5f);
-        StartCoroutine(HideCurrentControls());
+
+        //yield return new WaitForSeconds(4.5f);
+        //StartCoroutine(HideCurrentControls());
     }
 
     private IEnumerator HideCurrentControls()
     {
-        animatorsList[currentControlTutorial].Play("controlsOut"); 
+        canPressToContinue = false;
+        animatorsList[currentControlTutorial - 1].Play("controlsOut"); 
         arrowGO.SetActive(false);
         yield return new WaitForSeconds(0.25f);
-        controlsList[currentControlTutorial].SetActive(false);
+        controlsList[currentControlTutorial - 1].SetActive(false);
 
-        ContinueTutorial();
+        if (currentControlTutorial < controlsList.Length)
+            StartCoroutine(ShowNextControls());
+        //ContinueTutorial();
     }
 }

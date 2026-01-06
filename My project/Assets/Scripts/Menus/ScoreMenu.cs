@@ -1,11 +1,20 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreMenu : MonoBehaviour
 {
     public GameObject finalScoreGO;
     private TMP_Text finalScoreUI;
+    [SerializeField]
+    private FadeInOut fade;
+
+    [SerializeField]
+    private Button retryBtn;
+    [SerializeField]
+    private Button menuBtn;
 
     private void Awake()
     {
@@ -33,6 +42,27 @@ public class ScoreMenu : MonoBehaviour
 
     public void LoadGameScene()
     {
+        retryBtn.enabled = false;
+        menuBtn.enabled = false;
+        fade.StartFadeIn(0.5f);
+        StartCoroutine(FadeLoadGame());
+    }
+
+    private IEnumerator FadeLoadGame()
+    {
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("GameScene");
+    }
+    public void LoadMainMenuScene()
+    {
+        retryBtn.enabled = false;
+        menuBtn.enabled = false;
+        fade.StartFadeIn(2f);
+        StartCoroutine(FadeLoadMainMenu());
+    }
+    private IEnumerator FadeLoadMainMenu()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainMenu");
     }
 }

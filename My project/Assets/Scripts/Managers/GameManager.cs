@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         time = 20; 
         isGameOver = false;
 
-        fade.StartFadeOut();
+        fade.StartFadeOut(fade.fadeTime);
     }
 
     // Update is called once per frame
@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator StartSlowmo()
     {
         SetTimeScale(0.4f);
-        fade.StartFadeIn();
+        fade.StartFadeIn(fade.fadeTime);
         yield return new WaitForSecondsRealtime(1f);
         SetTimeScale(0.2f);
         yield return new WaitForSecondsRealtime(1f);

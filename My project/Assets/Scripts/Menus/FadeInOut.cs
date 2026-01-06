@@ -22,25 +22,35 @@ public class FadeInOut : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartFadeOut();
+        StartFadeOut(fadeTime);
     }
 
-    public void StartFadeOut()
+    public void StartFadeOut(float time)
     {
         img.enabled = true;
-        startColor = new Color(img.color.r, img.color.g, img.color.b, 1);
+        startColor = new Color(img.color.r, img.color.g, img.color.b, img.color.a /*1*/);
         targetColor = new Color(img.color.r, img.color.g, img.color.b, 0);
 
+        fadeTime = time;
+
+        isFadingIn = false;
         isFadingOut = true;
+        fadePercentage = 0;
+        currentFadingTime = 0;
     }
 
-    public void StartFadeIn()
+    public void StartFadeIn(float time)
     {
         img.enabled = true;
-        startColor = new Color(img.color.r, img.color.g, img.color.b, 0);
+        startColor = new Color(img.color.r, img.color.g, img.color.b, img.color.a /*0*/);
         targetColor = new Color(img.color.r, img.color.g, img.color.b, 1);
 
+        fadeTime = time;
+
+        isFadingOut = false;
         isFadingIn = true;
+        fadePercentage = 0;
+        currentFadingTime = 0;
     }
 
     // Update is called once per frame
