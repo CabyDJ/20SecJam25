@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
 
     float timeLimit = 0;
     bool doubleScore = false;
+    bool gotHit = false;
     [SerializeField]
     public bool isGameOver;
 
@@ -42,6 +43,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private float _time;
 
+    [SerializeField]
+    private AudioClip[] audioClips;
     private void Awake()
     {
         if (instance == null)
@@ -58,9 +61,12 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
         score = 0;
         time = 20; 
-        isGameOver = false;
+        isGameOver = false; 
+        gotHit = false;
 
         fade.StartFadeOut(fade.fadeTime);
+
+        StartCoroutine(PlayMusic());
     }
 
     // Update is called once per frame
@@ -105,6 +111,7 @@ public class GameManager : MonoBehaviour
     {
         time -= t;
         uiManager.ShowTimeReduction();
+        gotHit = true;
     }
 
     public void LoadGame()
@@ -125,12 +132,24 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator StartSlowmo()
     {
+        if (gotHit)
+        {
+            MusicManager.instance.PlayOnce(audioClips[1]);
+        }
+        
         SetTimeScale(0.4f);
         fade.StartFadeIn(fade.fadeTime);
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1.12f);
         SetTimeScale(0.2f);
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(1.12f);
         LoadScoreScene();
         SetTimeScale(1f);
+    }
+
+    private IEnumerator PlayMusic()
+    {
+        yield return new WaitForSeconds(0.6f);
+        //yield return new WaitForEndOfFrame();
+        MusicManager.instance.PlayOnce(audioClips[0]);
     }
 }

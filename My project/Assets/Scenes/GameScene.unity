@@ -88760,6 +88760,9 @@ MonoBehaviour:
   isGameOver: 0
   _score: 0
   _time: 0
+  audioClips:
+  - {fileID: 8300000, guid: 3746f7013e71ca548a66a6c80b20b495, type: 3}
+  - {fileID: 8300000, guid: 5942ffa365fcd8a4fbca94d7559c825d, type: 3}
 --- !u!1001 &428805067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94372,6 +94375,7 @@ GameObject:
   - component: {fileID: 1381515680}
   - component: {fileID: 1381515678}
   - component: {fileID: 1381515681}
+  - component: {fileID: 1381515682}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -94595,6 +94599,14 @@ MonoBehaviour:
     FrequencyGain: 1
     Duration: 1
     m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!81 &1381515682
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1381515673}
+  m_Enabled: 1
 --- !u!1 &1382937546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5733876486453015380, guid: 24129ac2a8573524fb494ce5df6b84d9, type: 3}
@@ -94637,6 +94649,63 @@ CapsuleCollider2D:
   m_Offset: {x: -0.42, y: 0.48}
   m_Size: {x: 7.31, y: 1}
   m_Direction: 1
+--- !u!1001 &1396236550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7199463168514527088, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
 --- !u!4 &1420995758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2704618133247926045, guid: ee0bef952c08e90408c63c83b22c8c70, type: 3}
@@ -103051,3 +103120,4 @@ SceneRoots:
   - {fileID: 1356019848}
   - {fileID: 848970507}
   - {fileID: 5831905735394830014}
+  - {fileID: 1396236550}

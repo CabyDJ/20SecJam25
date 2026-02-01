@@ -512,6 +512,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998dd847272e3274c883d8c688395a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
+  audioClip:
+  - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
+  - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
+  - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
   text: {fileID: 0}
   highlightColor: {r: 0.4156863, g: 0.74509805, b: 0.18431373, a: 1}
   highlightedSize: 14
@@ -1186,6 +1190,9 @@ MonoBehaviour:
   fade: {fileID: 1770651038}
   retryBtn: {fileID: 1112700960}
   menuBtn: {fileID: 248617101}
+  audioClips:
+  - {fileID: 8300000, guid: 40e8310133f938b4797792052e4a76f6, type: 3}
+  - {fileID: 8300000, guid: 46308c0d49b147c4d876af0799604cfd, type: 3}
 --- !u!1 &816743152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1247,7 +1254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.EventSystems.EventSystem
-  m_FirstSelected: {fileID: 1112700958}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &816743155
@@ -1265,6 +1272,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1107224566
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.3365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07196
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068577683268251759, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5689528985656675009, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: 'audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 40e8310133f938b4797792052e4a76f6, type: 3}
+    - target: {fileID: 5689528985656675009, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: 'audioClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 46308c0d49b147c4d876af0799604cfd, type: 3}
+    - target: {fileID: 7199463168514527088, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
 --- !u!1 &1112700958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1411,6 +1483,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998dd847272e3274c883d8c688395a90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
+  audioClip:
+  - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
+  - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
+  - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
   text: {fileID: 0}
   highlightColor: {r: 0.4156863, g: 0.74509805, b: 0.18431373, a: 1}
   highlightedSize: 14
@@ -1543,6 +1619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuInputHandler
   mainMenu: {fileID: 0}
+  selectable: {fileID: 1112700960}
 --- !u!114 &1200028786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1569,7 +1646,19 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1200028785}
+        m_TargetAssemblyTypeName: MenuInputHandler, Assembly-CSharp
+        m_MethodName: OnMoveInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
     m_ActionName: 'Gameplay/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
@@ -2148,6 +2237,7 @@ GameObject:
   - component: {fileID: 1931953303}
   - component: {fileID: 1931953302}
   - component: {fileID: 1931953301}
+  - component: {fileID: 1931953305}
   m_Layer: 0
   m_Name: UICamera
   m_TagString: Untagged
@@ -2297,6 +2387,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1931953305
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931953300}
+  m_Enabled: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2310,3 +2408,4 @@ SceneRoots:
   - {fileID: 1711520316}
   - {fileID: 1931953304}
   - {fileID: 1200028787}
+  - {fileID: 1107224566}

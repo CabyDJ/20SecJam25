@@ -16,6 +16,9 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField]
     private Button menuBtn;
 
+    [SerializeField]
+    private AudioClip[] audioClips;
+
     private void Awake()
     {
         finalScoreUI = finalScoreGO.GetComponent<TMP_Text>();
@@ -26,6 +29,8 @@ public class ScoreMenu : MonoBehaviour
     {
         Application.targetFrameRate = 60;
         SetScoreValue();
+
+        MusicManager.instance.PlayIntroAndLoop(audioClips[0], audioClips[1]);
     }
 
     // Update is called once per frame

@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using UnityEngine.UI;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine.EventSystems;
 
 public class MenuInputHandler : MonoBehaviour
 {
@@ -10,6 +13,9 @@ public class MenuInputHandler : MonoBehaviour
     private InputActionMap MenuMap { get; set; }
     public bool SubmitInput { get; private set; }
     public bool ClickInput { get; private set; }
+    public bool MoveInput { get; private set; }
+    [SerializeField]
+    private Button selectable;
 
     private void Awake()
     {
@@ -57,5 +63,20 @@ public class MenuInputHandler : MonoBehaviour
         ClickInput = click;
         yield return new WaitForEndOfFrame();
         ClickInput = false;
+    }
+
+    public void OnMoveInput(InputAction.CallbackContext context)
+    {
+        if (context.performed && /*!MoveInput*/ EventSystem.current.currentSelectedGameObject == null)
+        {
+            //MoveInput = true;
+            StartCoroutine(SelectPlayButton());
+        }
+    }
+
+    public IEnumerator SelectPlayButton()
+    {
+        yield return new WaitForEndOfFrame();
+        selectable.Select();
     }
 }
