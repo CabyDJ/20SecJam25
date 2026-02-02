@@ -16,6 +16,9 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     private AudioClip[] audioClips;
 
+    [HideInInspector]
+    public bool isInSettings = false;
+
 
     private void Awake()
     {
@@ -79,6 +82,7 @@ public class MainMenu : MonoBehaviour
 
     public void ShowSettings()
     {
+        isInSettings = true;
         settingsCont.DisplaySettings();
         HideMainMenu();
         MoscaOut();
@@ -86,6 +90,7 @@ public class MainMenu : MonoBehaviour
 
     public void HideSettings()
     {
+        isInSettings = false;
         settingsCont.CloseSettings();
         ShowMainMenu();
         MoscaIn();

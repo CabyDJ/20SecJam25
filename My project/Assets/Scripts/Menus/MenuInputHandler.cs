@@ -16,6 +16,8 @@ public class MenuInputHandler : MonoBehaviour
     public bool MoveInput { get; private set; }
     [SerializeField]
     private Button selectable;
+    [SerializeField]
+    private Slider sliderAudio;
 
     private void Awake()
     {
@@ -70,13 +72,27 @@ public class MenuInputHandler : MonoBehaviour
         if (context.performed && /*!MoveInput*/ EventSystem.current.currentSelectedGameObject == null)
         {
             //MoveInput = true;
-            StartCoroutine(SelectPlayButton());
+            DefaultSelect();
         }
+    }
+
+    private void DefaultSelect()
+    {
+        if (!mainMenu.isInSettings)
+            StartCoroutine(SelectPlayButton());
+        else
+            StartCoroutine(SelectAudioSlider());
     }
 
     public IEnumerator SelectPlayButton()
     {
         yield return new WaitForEndOfFrame();
         selectable.Select();
+    }
+
+    public IEnumerator SelectAudioSlider()
+    {
+        yield return new WaitForEndOfFrame();
+        sliderAudio.Select();
     }
 }

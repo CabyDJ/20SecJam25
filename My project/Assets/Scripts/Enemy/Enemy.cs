@@ -86,6 +86,8 @@ public class Enemy : MonoBehaviour
 
     private Coroutine ProjectileSpriteCor;
 
+    [SerializeField]
+    AudioClip[] audioClipsThrow;
 
     private void Awake()
     {
@@ -216,6 +218,8 @@ public class Enemy : MonoBehaviour
 
         animator.SetBool("isThrowing", true);
         animator.SetFloat("Throw", 1);
+
+        SoundManager.instance.PlaySound(audioClipsThrow, transform, 1f);
     }
 
     //private IEnumerator HalfTimeBonus()

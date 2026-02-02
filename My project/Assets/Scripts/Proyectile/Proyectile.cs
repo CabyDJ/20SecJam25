@@ -22,6 +22,9 @@ public class Proyectile : MonoBehaviour
     //[SerializeField]
     //private Sprite[] sprites;
 
+    [SerializeField]
+    AudioClip[] audioClipsHit;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -73,6 +76,8 @@ public class Proyectile : MonoBehaviour
         GameObject go = Instantiate(HitGO);
         go.transform.position = pos;
 
+        if (audioClipsHit != null)
+            SoundManager.instance.PlaySound(audioClipsHit, transform, 1f);
 
         //GameObject go2 = Instantiate(PointsGO);
         //go2.transform.position = pos;

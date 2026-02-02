@@ -158,6 +158,11 @@ MonoBehaviour:
   spriteRender: {fileID: 7381179124917274270}
   col: {fileID: 5267365662431122908}
   trail: {fileID: 3838671315646331037}
+  audioClipsHit:
+  - {fileID: 8300000, guid: 5fb7b7f76aec9a443b2cc783a080ea87, type: 3}
+  - {fileID: 8300000, guid: 258edb3970064454b942d4c6f90a2f61, type: 3}
+  - {fileID: 8300000, guid: 1ee81687a10f2734f8441d353ccf59fb, type: 3}
+  - {fileID: 8300000, guid: 98d6643d021313b4aa73bc3f5481c0cb, type: 3}
 --- !u!50 &7391963601380315510
 Rigidbody2D:
   serializedVersion: 5
