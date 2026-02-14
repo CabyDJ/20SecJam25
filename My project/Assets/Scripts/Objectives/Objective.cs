@@ -46,6 +46,11 @@ public class Objective : MonoBehaviour
     [HideInInspector]
     public event PropertyChangedEventHandler PropertyChanged;
 
+    [SerializeField]
+    AudioClip[] destroyAudioClipsHit;
+    [SerializeField]
+    AudioClip[] hitAudioClipsHit;
+
     private void Awake()
     {
         if(shakeCont == null)
@@ -112,7 +117,22 @@ public class Objective : MonoBehaviour
         {
             isDestroyed = true;
             StartDestroy();
+            PlayDestroyedSound();
         }
+        else
+        {
+            PlayHitSound();
+        }
+    }
+
+    private void PlayHitSound()
+    {
+        SoundManager.instance.PlaySound(hitAudioClipsHit, transform, 1f);
+    }
+
+    private void PlayDestroyedSound()
+    {
+        SoundManager.instance.PlaySound(destroyAudioClipsHit, transform, 1f);
     }
 
     private void StartDestroy()
@@ -125,7 +145,6 @@ public class Objective : MonoBehaviour
             //coll2d.enabled = false;
             coll2d.isTrigger = true;
         }
-
     }
 
     private void ChangeSprite()

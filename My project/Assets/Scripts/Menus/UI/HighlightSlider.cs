@@ -1,6 +1,5 @@
 using System;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -34,6 +33,9 @@ public class HighlightSlider : MonoBehaviour, IPointerEnterHandler, IPointerExit
         FlyMusic,
         FlySound
     }
+
+    [SerializeField]
+    private AudioSource audioWhileSelected;
 
     private void Awake()
     {
@@ -98,6 +100,11 @@ public class HighlightSlider : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         flyAnimator.SetFloat("speed", 2f);
         flySprite.color = flyIconColorSelected;
+
+        if (audioWhileSelected != null)
+        {
+            audioWhileSelected.Play();
+        }
     }
     public void DisableHighlight()
     {
@@ -106,5 +113,10 @@ public class HighlightSlider : MonoBehaviour, IPointerEnterHandler, IPointerExit
 
         flyAnimator.SetFloat("speed", 1f);
         flySprite.color = flyIconColorIdle;
+
+        if (audioWhileSelected != null)
+        {
+            audioWhileSelected.Stop();
+        }
     }
 }

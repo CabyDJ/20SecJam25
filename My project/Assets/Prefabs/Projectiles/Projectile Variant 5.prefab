@@ -28,6 +28,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -101916371, guid: 1e51046184117194d98e946f7c181fd4, type: 3}
+    - target: {fileID: 8276329668654608255, guid: 928754f1b0306ff4ebee30bdc846dab9, type: 3}
+      propertyPath: audioClipsHit.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8276329668654608255, guid: 928754f1b0306ff4ebee30bdc846dab9, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b1093913c35cf5f45a2be0751b122004, type: 3}
+    - target: {fileID: 8276329668654608255, guid: 928754f1b0306ff4ebee30bdc846dab9, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 0bf7c49609be8804ba80d47bde0143bd, type: 3}
+    - target: {fileID: 8276329668654608255, guid: 928754f1b0306ff4ebee30bdc846dab9, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 56fd1cbb8809f034286a3c8c5ad1ea75, type: 3}
     - target: {fileID: 8648262985033065875, guid: 928754f1b0306ff4ebee30bdc846dab9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

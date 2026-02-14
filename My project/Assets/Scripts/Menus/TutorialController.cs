@@ -35,6 +35,8 @@ public class TutorialController : MonoBehaviour
     bool isTutoring;
     bool canPressToContinue;
 
+    [SerializeField]
+    AudioClip[] flyTalkAudioClips;
 
     private void Awake()
     {
@@ -127,6 +129,8 @@ public class TutorialController : MonoBehaviour
         yield return new WaitForSeconds(0.4f);
         controlsList[currentControlTutorial].SetActive(true);
         animatorsList[currentControlTutorial].Play("controlsIn");
+
+        SoundManager.instance.PlaySound(flyTalkAudioClips[currentControlTutorial], transform, 1f);
 
         yield return new WaitForSeconds(0.5f);
 

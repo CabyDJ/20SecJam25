@@ -31,6 +31,15 @@ public class PlayerScript : MonoBehaviour
     [SerializeField]
     private DashController dashCont;
 
+    [SerializeField]
+    AudioClip[] dashAudioClips;
+    [SerializeField]
+    AudioClip[] tauntAudioClips;
+    [SerializeField]
+    AudioClip[] hitAudioClips;
+
+    GameObject tauntAudioGO;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -85,10 +94,28 @@ public class PlayerScript : MonoBehaviour
 
     private void StartTaunt()
     {
+        //StopTauntSound();
+
         tauntParticle.Play();
         enemy.StartTaunted();
         inputHandler.SetTaunt(false);
+
+        //TAUNT SOUND
+
+        if (tauntAudioGO == null)
+        {
+            tauntAudioGO = SoundManager.instance.PlaySound(tauntAudioClips, transform, 1f); //delete playing sound early if player taunts again while not finished playing (return and store audiosource object?)
+        }
     }
+
+    private void StopTauntSound()
+    {
+        if (tauntAudioGO != null)
+        {
+            Destroy(tauntAudioGO);
+        }
+    }
+
     private void StartDash()
     {
         rb.linearVelocity = Vector2.zero;
@@ -98,6 +125,9 @@ public class PlayerScript : MonoBehaviour
 
         StartCoroutine(StartDashCD());
         inputHandler.SetDash(false);
+
+        //DASH SOUND
+        SoundManager.instance.PlaySound(dashAudioClips, transform, 1f);
     }
 
     private IEnumerator StartDashCD()
@@ -137,6 +167,9 @@ public class PlayerScript : MonoBehaviour
         rb.AddForce(-dir * 200, ForceMode2D.Impulse);
 
         CameraShakeManager.instance.CameraShake(impulseSource, dir);
+
+        StopTauntSound();
+        SoundManager.instance.PlaySound(hitAudioClips, transform, 1f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -8,6 +8,8 @@ public class HighlightText : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField]
     AudioClip[] audioClip;
+    [SerializeField]
+    AudioClip[] pressedAudioClip;
 
     public TMP_Text text;
     private Button selectable;
@@ -79,5 +81,10 @@ public class HighlightText : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         text.color = originalColor;
         text.fontSize = originalSize;
+    }
+
+    public void PressedButton()
+    {
+        SoundManager.instance.PlaySound(pressedAudioClip, transform, 1f);
     }
 }

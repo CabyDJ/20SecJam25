@@ -36,6 +36,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Projectile Variant 8
       objectReference: {fileID: 0}
+    - target: {fileID: 7418775697540352051, guid: 6653d12f579243c4eaa8ab7d893fd4a3, type: 3}
+      propertyPath: audioClipsHit.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7418775697540352051, guid: 6653d12f579243c4eaa8ab7d893fd4a3, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 239795ce598878e40b518fb97cc5f886, type: 3}
     - target: {fileID: 7794439674588594911, guid: 6653d12f579243c4eaa8ab7d893fd4a3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

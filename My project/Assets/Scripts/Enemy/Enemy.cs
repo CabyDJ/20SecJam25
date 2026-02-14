@@ -88,6 +88,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     AudioClip[] audioClipsThrow;
+    [SerializeField]
+    AudioClip[] tauntedAudioClips;
 
     private void Awake()
     {
@@ -309,6 +311,8 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator StartTauntTime()
     {
+        SoundManager.instance.PlaySound(tauntedAudioClips, transform, 1f);
+
         time = totalThrowSpeedBonus;
         burstTime = rapidBurstTime;
         //ResetThrowValues();

@@ -13,26 +13,35 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySound(AudioClip audioClip, Transform spawnPos, float volume)
     {
-        AudioSource audioSource = Instantiate(soundObject, spawnPos.position, Quaternion.identity);
-        audioSource.clip = audioClip;
-        audioSource.volume = volume;
-        audioSource.Play();
+        if(audioClip != null)
+        {
+            AudioSource audioSource = Instantiate(soundObject, spawnPos.position, Quaternion.identity);
+            audioSource.clip = audioClip;
+            audioSource.volume = volume;
+            audioSource.Play();
 
-        Destroy(audioSource.gameObject, audioSource.clip.length);
+            Destroy(audioSource.gameObject, audioSource.clip.length);
+        }
 
     }
 
-    public void PlaySound(AudioClip[] audioClip, Transform spawnPos, float volume)
+    public GameObject PlaySound(AudioClip[] audioClip, Transform spawnPos, float volume)
     {
-        int random = Random.Range(0, audioClip.Length);
+        if (audioClip != null && audioClip.Length > 0)
+        {
+            int random = Random.Range(0, audioClip.Length);
 
-        AudioSource audioSource = Instantiate(soundObject, spawnPos.position, Quaternion.identity);
-        audioSource.clip = audioClip[random];
-        audioSource.volume = volume;
-        audioSource.Play();
+            AudioSource audioSource = Instantiate(soundObject, spawnPos.position, Quaternion.identity);
+            audioSource.clip = audioClip[random];
+            audioSource.volume = volume;
+            audioSource.Play();
 
-        Destroy(audioSource.gameObject, audioSource.clip.length);
+            Destroy(audioSource.gameObject, audioSource.clip.length);
 
+            return audioSource.gameObject;
+        }
+
+        return null;
     }
 
 }

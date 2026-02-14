@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1961434246, guid: 1e51046184117194d98e946f7c181fd4, type: 3}
+    - target: {fileID: 3861543908162400896, guid: d5505a9ec138e004796f9a145b1d603d, type: 3}
+      propertyPath: audioClipsHit.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861543908162400896, guid: d5505a9ec138e004796f9a145b1d603d, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 06a8343b38afbe845a7ce7fd73fff764, type: 3}
+    - target: {fileID: 3861543908162400896, guid: d5505a9ec138e004796f9a145b1d603d, type: 3}
+      propertyPath: 'audioClipsHit.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 9d57da0abd41c26498dd671b4b99489b, type: 3}
     - target: {fileID: 4560269690155759724, guid: d5505a9ec138e004796f9a145b1d603d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

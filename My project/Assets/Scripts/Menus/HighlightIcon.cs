@@ -7,6 +7,8 @@ public class HighlightIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 {
     [SerializeField]
     AudioClip[] audioClip;
+    [SerializeField]
+    AudioClip[] pressedAudioClip;
 
     private Button selectable;
     Animator animator;
@@ -61,5 +63,6 @@ public class HighlightIcon : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void PressedButton()
     {
         animator.Play("PressedIcon");
+        SoundManager.instance.PlaySound(pressedAudioClip, transform, 1f);
     }
 }

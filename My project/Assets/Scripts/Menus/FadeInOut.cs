@@ -94,4 +94,9 @@ public class FadeInOut : MonoBehaviour
     //{
     //    yield return new WaitForSeconds();
     //}
+
+    private void FadeOutMusic()
+    {
+
+    }
 }

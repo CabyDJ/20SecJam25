@@ -590,6 +590,7 @@ MonoBehaviour:
   highlightedSize: 12
   flyIcon: {fileID: 1097212358}
   flyAnimation: 0
+  audioWhileSelected: {fileID: 353497102}
 --- !u!1 &208493003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1206,6 +1207,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 321340699}
+        m_TargetAssemblyTypeName: HighlightText, Assembly-CSharp
+        m_MethodName: PressedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &321340697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,6 +1273,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
   - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
   - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9bd0a466078badf47adcb6c15cc64962, type: 3}
+  - {fileID: 8300000, guid: af24bf6b550dfcf4da2002b494676e90, type: 3}
+  - {fileID: 8300000, guid: a2e21752c3abd494385cc51cf3b1a39e, type: 3}
   text: {fileID: 1940578905}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -1304,6 +1321,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 353497101}
+  - component: {fileID: 353497102}
   m_Layer: 5
   m_Name: FXIcon
   m_TagString: Untagged
@@ -1331,6 +1349,103 @@ RectTransform:
   m_AnchoredPosition: {x: -105.69197, y: 0}
   m_SizeDelta: {x: 32, y: 32}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!82 &353497102
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353497100}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 9148214300516945168, guid: c28290c577161e64ba9a4a081ad3d4aa, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 80d866ce16420a34e903446bcd78b16b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &356625579
 GameObject:
   m_ObjectHideFlags: 0
@@ -2126,6 +2241,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 518067294}
+        m_TargetAssemblyTypeName: HighlightText, Assembly-CSharp
+        m_MethodName: PressedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &518067292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2180,6 +2307,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
   - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
   - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9bd0a466078badf47adcb6c15cc64962, type: 3}
+  - {fileID: 8300000, guid: af24bf6b550dfcf4da2002b494676e90, type: 3}
+  - {fileID: 8300000, guid: a2e21752c3abd494385cc51cf3b1a39e, type: 3}
   text: {fileID: 1516492323}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -3153,6 +3284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
   audioClip: []
+  pressedAudioClip: []
   text: {fileID: 0}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -4720,6 +4852,11 @@ MonoBehaviour:
   - {fileID: 533645698}
   - {fileID: 1589237422}
   - {fileID: 489336997}
+  flyTalkAudioClips:
+  - {fileID: 8300000, guid: ad9c9eb156d8cfc4a9c1dfcfeec2f35b, type: 3}
+  - {fileID: 8300000, guid: 83261baf32ffde143ab84c77803addc7, type: 3}
+  - {fileID: 8300000, guid: 8006c016ae9ff6f40a711e2afc4af723, type: 3}
+  - {fileID: 8300000, guid: 2c99c41dd6f572746871c7158e6eb81b, type: 3}
 --- !u!95 &1110013950
 Animator:
   serializedVersion: 7
@@ -10674,6 +10811,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HighlightIcon
   audioClip:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9571fedc2ed72b9458539cfa4ae65f7e, type: 3}
   spriteAnimator: {fileID: 1471130467}
 --- !u!1 &1331213416
 GameObject:
@@ -10869,6 +11008,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
   audioClip: []
+  pressedAudioClip: []
   text: {fileID: 0}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -12022,6 +12162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
   audioClip: []
+  pressedAudioClip: []
   text: {fileID: 0}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -12735,6 +12876,7 @@ MonoBehaviour:
   highlightedSize: 12
   flyIcon: {fileID: 578870082}
   flyAnimation: 1
+  audioWhileSelected: {fileID: 0}
 --- !u!1 &1589237422
 GameObject:
   m_ObjectHideFlags: 0
@@ -13035,6 +13177,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1599049366}
+        m_TargetAssemblyTypeName: HighlightText, Assembly-CSharp
+        m_MethodName: PressedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1599049364
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13089,6 +13243,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
   - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
   - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9bd0a466078badf47adcb6c15cc64962, type: 3}
+  - {fileID: 8300000, guid: af24bf6b550dfcf4da2002b494676e90, type: 3}
+  - {fileID: 8300000, guid: a2e21752c3abd494385cc51cf3b1a39e, type: 3}
   text: {fileID: 1516492323}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18
@@ -13508,6 +13666,7 @@ MonoBehaviour:
   highlightedSize: 12
   flyIcon: {fileID: 353497100}
   flyAnimation: 2
+  audioWhileSelected: {fileID: 353497102}
 --- !u!1 &1680974300
 GameObject:
   m_ObjectHideFlags: 0
@@ -14172,6 +14331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HighlightText
   audioClip: []
+  pressedAudioClip: []
   text: {fileID: 0}
   highlightColor: {r: 0.29572788, g: 0.8037735, b: 0.29572788, a: 1}
   highlightedSize: 18

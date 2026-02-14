@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
 using UnityEngine.UI;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine.EventSystems;
 
 public class MenuInputHandler : MonoBehaviour
@@ -78,7 +77,7 @@ public class MenuInputHandler : MonoBehaviour
 
     private void DefaultSelect()
     {
-        if (!mainMenu.isInSettings)
+        if (mainMenu != null && !mainMenu.isInSettings)
             StartCoroutine(SelectPlayButton());
         else
             StartCoroutine(SelectAudioSlider());

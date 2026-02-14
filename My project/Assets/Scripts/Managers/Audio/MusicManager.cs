@@ -1,10 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance;
     [SerializeField] private AudioSource[] audioSources;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource introAudioSource;
+    [SerializeField] private AudioSource loopAudioSource;
     private int audioToggle;
 
     private AudioClip currentClip;
@@ -18,19 +20,26 @@ public class MusicManager : MonoBehaviour
     private double musicDuration;
 
     private bool queudClip;
+    private bool isIntroPlaying;
 
     private void Awake()
     {
         if (instance == null)
             instance = this;
-        audioSource = GetComponent<AudioSource>();
+        //introAudioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        if (queudClip && AudioSettings.dspTime > goalTime /*- 1*/)
+        //Debug.Log("goaltime: " + goalTime + " " + (float)musicDuration + " " + AudioSettings.dspTime);
+        //if (queudClip && AudioSettings.dspTime >= goalTime /*- 1*/)
+        //{
+        //    //PlayScheduledClip();
+        //    //PlayScheduledAudio();
+        //}
+        //Debug.Log(introClip + " " + isIntroPlaying + " " + introAudioSource.isPlaying);
+        if (introClip != null && isIntroPlaying && !introAudioSource.isPlaying)
         {
-            //PlayScheduledClip();
             PlayScheduledAudio();
         }
     }
@@ -50,6 +59,7 @@ public class MusicManager : MonoBehaviour
     {
         PlayLoop(loopClip);
         queudClip = false;
+        isIntroPlaying = false;
     }
 
     public void SetCurrentClip(AudioClip clip)
@@ -62,32 +72,39 @@ public class MusicManager : MonoBehaviour
         introClip = intro;
         loopClip = loop;
 
-        audioSource.loop = false;
-        audioSource.clip = introClip;
-        audioSource.Play();
+        introAudioSource.loop = false;
+        introAudioSource.clip = introClip;
+        introAudioSource.Play();
+        isIntroPlaying = true;
 
         musicDuration = (double)introClip.samples / introClip.frequency;
         goalTime = AudioSettings.dspTime + musicDuration;
+
+        //loopAudioSource.clip = loopClip;
+        //loopAudioSource.PlayScheduled(goalTime);//PLAYSCHEDULED DOESNT WORK ON WEBGL BUILDS :( MAYBE HARDCODE TIME TO INTRO DURATION?
+
+        //loopAudioSource.loop = true;
+        //loopAudioSource.clip = loop;
 
         queudClip = true;
     }
 
     public void PlayLoop(AudioClip loop)
     {
-        audioSource.loop = true;
-        audioSource.clip = loop;
-        audioSource.Play();
+        loopAudioSource.loop = true;
+        loopAudioSource.clip = loop;
+        loopAudioSource.Play();
     }
 
     public void PlayOnce(AudioClip clip)
     {
-        audioSource.loop = false;
-        audioSource.clip = clip;
-        audioSource.Play();
+        introAudioSource.loop = false;
+        introAudioSource.clip = clip;
+        introAudioSource.Play();
     }
 
     public void SetAudioPitch(float pitch)
     {
-        audioSource.pitch = pitch;
+        introAudioSource.pitch = pitch;
     }
 }

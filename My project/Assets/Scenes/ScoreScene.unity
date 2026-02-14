@@ -516,6 +516,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
   - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
   - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9bd0a466078badf47adcb6c15cc64962, type: 3}
+  - {fileID: 8300000, guid: af24bf6b550dfcf4da2002b494676e90, type: 3}
+  - {fileID: 8300000, guid: a2e21752c3abd494385cc51cf3b1a39e, type: 3}
   text: {fileID: 0}
   highlightColor: {r: 0.4156863, g: 0.74509805, b: 0.18431373, a: 1}
   highlightedSize: 14
@@ -566,6 +570,18 @@ MonoBehaviour:
       - m_Target: {fileID: 784493739}
         m_TargetAssemblyTypeName: ScoreMenu, Assembly-CSharp
         m_MethodName: LoadMainMenuScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 248617100}
+        m_TargetAssemblyTypeName: HighlightText, Assembly-CSharp
+        m_MethodName: PressedButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1433,6 +1449,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1112700963}
+        m_TargetAssemblyTypeName: HighlightText, Assembly-CSharp
+        m_MethodName: PressedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1112700961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1487,6 +1515,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
   - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
   - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
+  pressedAudioClip:
+  - {fileID: 8300000, guid: 9bd0a466078badf47adcb6c15cc64962, type: 3}
+  - {fileID: 8300000, guid: af24bf6b550dfcf4da2002b494676e90, type: 3}
+  - {fileID: 8300000, guid: a2e21752c3abd494385cc51cf3b1a39e, type: 3}
   text: {fileID: 0}
   highlightColor: {r: 0.4156863, g: 0.74509805, b: 0.18431373, a: 1}
   highlightedSize: 14
@@ -1598,7 +1630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1200028787}
   - component: {fileID: 1200028786}
-  - component: {fileID: 1200028785}
+  - component: {fileID: 1200028788}
   m_Layer: 0
   m_Name: InputManager
   m_TagString: Untagged
@@ -1606,20 +1638,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1200028785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1200028784}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ce7161da1fe9e4e815931cfa40c992, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MenuInputHandler
-  mainMenu: {fileID: 0}
-  selectable: {fileID: 1112700960}
 --- !u!114 &1200028786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,8 +1665,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1200028785}
-        m_TargetAssemblyTypeName: MenuInputHandler, Assembly-CSharp
+      - m_Target: {fileID: 1200028788}
+        m_TargetAssemblyTypeName: ScoreInputHandler, Assembly-CSharp
         m_MethodName: OnMoveInput
         m_Mode: 0
         m_Arguments:
@@ -1707,9 +1725,9 @@ MonoBehaviour:
     m_ActionName: 'Menu/Navigate[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1200028785}
-        m_TargetAssemblyTypeName: MenuInputHandler, Assembly-CSharp
-        m_MethodName: OnSubmitInput
+      - m_Target: {fileID: 1200028788}
+        m_TargetAssemblyTypeName: ScoreInputHandler, Assembly-CSharp
+        m_MethodName: OnMoveInput
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1731,8 +1749,8 @@ MonoBehaviour:
     m_ActionName: 'Menu/Point[/Mouse/position]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1200028785}
-        m_TargetAssemblyTypeName: MenuInputHandler, Assembly-CSharp
+      - m_Target: {fileID: 1200028788}
+        m_TargetAssemblyTypeName: ScoreInputHandler, Assembly-CSharp
         m_MethodName: OnClickInput
         m_Mode: 0
         m_Arguments:
@@ -1785,6 +1803,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1200028788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1200028784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7a9234f66bf5b446aba07087db239ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreInputHandler
+  selectable: {fileID: 1112700960}
 --- !u!1 &1413576669
 GameObject:
   m_ObjectHideFlags: 0

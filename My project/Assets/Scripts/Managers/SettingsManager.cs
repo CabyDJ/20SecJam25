@@ -61,9 +61,9 @@ public class SettingsManager : MonoBehaviour
 
     private void GetAudioConfig()
     {
-        float masterVol = PlayerPrefs.GetFloat("MasterVolume", 0f);
-        float FXVol = PlayerPrefs.GetFloat("FXVolume", 0f);
-        float musicVol = PlayerPrefs.GetFloat("MusicVolume", 0f);
+        float masterVol = PlayerPrefs.GetFloat("MasterVolume", -6f);
+        float FXVol = PlayerPrefs.GetFloat("FXVolume", -6f);
+        float musicVol = PlayerPrefs.GetFloat("MusicVolume", -6f);
 
         SetMasterSlider(VolumeToValue(masterVol));
         SetFXSlider(VolumeToValue(FXVol));
