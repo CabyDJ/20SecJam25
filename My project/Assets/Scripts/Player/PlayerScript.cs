@@ -39,6 +39,15 @@ public class PlayerScript : MonoBehaviour
     AudioClip[] hitAudioClips;
 
     GameObject tauntAudioGO;
+    [SerializeField]
+    AudioSource flyAudioSource;
+
+    private float fadeTime;
+    private float currentFlyFadeTime;
+    private float fadePercentage;
+
+    private float startVolume;
+    private float targetVolume;
 
     void Awake()
     {
@@ -51,16 +60,22 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         dashReady = true;
+
+        startVolume = flyAudioSource.volume;
+        targetVolume = 0;
+        fadeTime = 0.6f;
+
+        fadePercentage = 0;
+        currentFlyFadeTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (!GameManager.instance.isGameOver)
-        //{
-
-
-        //}
+        if (GameManager.instance.isGameOver)
+        {
+            //SilenceFlySound(); //remove this and just reduce Mixer FX audio when timer ends? (to silence all FX instead of just the Fly sound)
+        }
 
         if (inputHandler.MoveInput != Vector2.zero)
         {
@@ -180,5 +195,14 @@ public class PlayerScript : MonoBehaviour
             Vector2 dir = (collision.gameObject.transform.position - transform.position).normalized; 
             GetHit(dir);
         }
+    }
+
+    private void SilenceFlySound()
+    {
+        fadePercentage = currentFlyFadeTime / fadeTime;
+
+        flyAudioSource.volume = Mathf.Lerp(startVolume, targetVolume, fadePercentage);
+
+        currentFlyFadeTime += Time.deltaTime;
     }
 }

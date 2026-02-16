@@ -89738,6 +89738,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1643513768}
     - target: {fileID: 2582076839196513371, guid: 1e4abbe92a4e65b4e92e7294fe62fa67, type: 3}
+      propertyPath: flyAudioSource
+      value: 
+      objectReference: {fileID: 1540703173}
+    - target: {fileID: 2582076839196513371, guid: 1e4abbe92a4e65b4e92e7294fe62fa67, type: 3}
       propertyPath: hitAudioClips.Array.size
       value: 7
       objectReference: {fileID: 0}
@@ -103151,6 +103155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeInOut
   fadeTime: 0.6
+  fadeOutFX: 1
+  fadeOutMusic: 0
+  audioManager: {fileID: 2096993259}
 --- !u!114 &2067605878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -103330,6 +103337,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1191243100}
   m_SourcePrefab: {fileID: 100100000, guid: 24129ac2a8573524fb494ce5df6b84d9, type: 3}
+--- !u!114 &2096993259 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7156654708178221727, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+  m_PrefabInstance: {fileID: 1396236550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac43bf3165b232d49af2587c43fda2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioMixerManager
 --- !u!1 &2099580054 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3501926863034320767, guid: ee0bef952c08e90408c63c83b22c8c70, type: 3}

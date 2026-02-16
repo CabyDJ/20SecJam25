@@ -1816,6 +1816,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreInputHandler
   selectable: {fileID: 1112700960}
+--- !u!114 &1301151254 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7156654708178221727, guid: 1b8354e0b9b6fe04ca81c37279b48f18, type: 3}
+  m_PrefabInstance: {fileID: 1107224566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac43bf3165b232d49af2587c43fda2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioMixerManager
 --- !u!1 &1413576669
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeInOut
   fadeTime: 5
+  fadeOutFX: 1
+  fadeOutMusic: 1
+  audioManager: {fileID: 1301151254}
 --- !u!114 &1770651039
 MonoBehaviour:
   m_ObjectHideFlags: 0

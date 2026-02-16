@@ -37,6 +37,8 @@ public class TutorialController : MonoBehaviour
 
     [SerializeField]
     AudioClip[] flyTalkAudioClips;
+    [SerializeField]
+    AudioClip[] continueTutorialClip;
 
     private void Awake()
     {
@@ -110,6 +112,7 @@ public class TutorialController : MonoBehaviour
     public void ContinueTutorial()
     {
         currentControlTutorial++;
+        SoundManager.instance.PlaySound(continueTutorialClip, transform, 1f);
 
         StartCoroutine(HideCurrentControls());
 

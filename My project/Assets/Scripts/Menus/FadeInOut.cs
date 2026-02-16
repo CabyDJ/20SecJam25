@@ -14,6 +14,20 @@ public class FadeInOut : MonoBehaviour
     Color startColor;
     Color targetColor;
 
+    [SerializeField]
+    private bool fadeOutFX;
+    [SerializeField]
+    private bool fadeOutMusic;
+
+    [SerializeField]
+    AudioMixerManager audioManager;
+
+    float startFXVolume;
+    float targetFXVolume;
+
+    float startMusicVolume;
+    float targetMusicVolume;
+
     private void Awake()
     {
         img = GetComponent<Image>();
@@ -44,6 +58,11 @@ public class FadeInOut : MonoBehaviour
         img.enabled = true;
         startColor = new Color(img.color.r, img.color.g, img.color.b, img.color.a /*0*/);
         targetColor = new Color(img.color.r, img.color.g, img.color.b, 1);
+
+        startFXVolume = audioManager.GetFXVolume();
+        targetFXVolume = 0;
+        startMusicVolume = audioManager.GetMusicVolume();
+        targetMusicVolume = 0;
 
         fadeTime = time;
 
@@ -79,6 +98,8 @@ public class FadeInOut : MonoBehaviour
 
             img.color = Color.Lerp(startColor, targetColor, fadePercentage);
 
+            CheckAudioFades();
+
             if (fadePercentage >= 1)
             {
                 //img.enabled = false;
@@ -95,8 +116,22 @@ public class FadeInOut : MonoBehaviour
     //    yield return new WaitForSeconds();
     //}
 
+    private void CheckAudioFades()
+    {
+        if (fadeOutFX)
+            FadeOutFX();
+
+        if (fadeOutMusic)
+            FadeOutMusic();
+    }
+
+    private void FadeOutFX()
+    {
+        audioManager.SetSoundFXVolume(audioManager.ValueToVolume(Mathf.Lerp(startFXVolume, targetFXVolume, fadePercentage)));
+    }
+
     private void FadeOutMusic()
     {
-
+        audioManager.SetMusicVolume(audioManager.ValueToVolume(Mathf.Lerp(startMusicVolume, targetMusicVolume, fadePercentage)));
     }
 }

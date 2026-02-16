@@ -4063,6 +4063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FadeInOut
   fadeTime: 0.5
+  fadeOutFX: 1
+  fadeOutMusic: 1
+  audioManager: {fileID: 1159611837}
 --- !u!114 &888303359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4857,6 +4860,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 83261baf32ffde143ab84c77803addc7, type: 3}
   - {fileID: 8300000, guid: 8006c016ae9ff6f40a711e2afc4af723, type: 3}
   - {fileID: 8300000, guid: 2c99c41dd6f572746871c7158e6eb81b, type: 3}
+  continueTutorialClip:
+  - {fileID: 8300000, guid: 849555e8a8cad1e4c82407fd4f61591e, type: 3}
+  - {fileID: 8300000, guid: dedbe3c34d1308d4dabd5eb4022169c6, type: 3}
+  - {fileID: 8300000, guid: 8c588bbdf3dbafe42821c5bcbc30f1d7, type: 3}
 --- !u!95 &1110013950
 Animator:
   serializedVersion: 7

@@ -43,19 +43,19 @@ public class SettingsManager : MonoBehaviour
 
     public void SetMasterSlider(float level)
     {
-        audioMixerManager.SetMasterVolume(ValueToVolume(level));
+        audioMixerManager.SetMasterVolume(audioMixerManager.ValueToVolume(level));
         SetSlider(masterSlider, masterTextValue, level);
     }
 
     public void SetFXSlider(float level)
     {
-        audioMixerManager.SetSoundFXVolume(ValueToVolume(level));
+        audioMixerManager.SetSoundFXVolume(audioMixerManager.ValueToVolume(level));
         SetSlider(soundFXSlider, FXSTextValue, level);
     }
 
     public void SetMusicSlider(float level)
     {
-        audioMixerManager.SetMusicVolume(ValueToVolume(level));
+        audioMixerManager.SetMusicVolume(audioMixerManager.ValueToVolume(level));
         SetSlider(musicSlider, musicTextValue, level);
     }
 
@@ -65,9 +65,9 @@ public class SettingsManager : MonoBehaviour
         float FXVol = PlayerPrefs.GetFloat("FXVolume", -6f);
         float musicVol = PlayerPrefs.GetFloat("MusicVolume", -6f);
 
-        SetMasterSlider(VolumeToValue(masterVol));
-        SetFXSlider(VolumeToValue(FXVol));
-        SetMusicSlider(VolumeToValue(musicVol));
+        SetMasterSlider(audioMixerManager.VolumeToValue(masterVol));
+        SetFXSlider(audioMixerManager.VolumeToValue(FXVol));
+        SetMusicSlider(audioMixerManager.VolumeToValue(musicVol));
     }
 
     private void SetSlider(Slider slider, TMP_Text sliderText, float value)
@@ -76,21 +76,21 @@ public class SettingsManager : MonoBehaviour
         sliderText.text = ((int)Math.Round(value)).ToString() /*VolumeToValue(value).ToString()*/;
     }
 
-    private static float ValueToVolume(float value)
-    {
-        var normalized = value / 100f;
-        var scaled = Mathf.Lerp(0.0001f, 1f, normalized);
-        var volume = Mathf.Log10(scaled) * 20f;
-        return volume;
-    }
+    //private static float ValueToVolume(float value)
+    //{
+    //    var normalized = value / 100f;
+    //    var scaled = Mathf.Lerp(0.0001f, 1f, normalized);
+    //    var volume = Mathf.Log10(scaled) * 20f;
+    //    return volume;
+    //}
 
-    private static float VolumeToValue(float volume)
-    {
-        var scaled = Mathf.Pow(10, volume / 20f);
-        var normalized = Mathf.InverseLerp(0.0001f, 1f, scaled);
-        var value = (int)Math.Round(normalized * 100f);
-        return value;
-    }
+    //private static float VolumeToValue(float volume)
+    //{
+    //    var scaled = Mathf.Pow(10, volume / 20f);
+    //    var normalized = Mathf.InverseLerp(0.0001f, 1f, scaled);
+    //    var value = (int)Math.Round(normalized * 100f);
+    //    return value;
+    //}
 
     public void DisplaySettings()
     {
