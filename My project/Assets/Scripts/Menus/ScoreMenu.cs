@@ -19,16 +19,29 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField]
     private AudioClip[] audioClips;
 
+    [SerializeField]
+    private float[] endingScores;
+
+    [SerializeField]
+    private ScoreBarController scoreBarController;
+    private FinalScoreDisplayController finalScoreController;
+
     private void Awake()
     {
         finalScoreUI = finalScoreGO.GetComponent<TMP_Text>();
+        finalScoreController = gameObject.GetComponent<FinalScoreDisplayController>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.finalScore = 13000;//TEST
         Application.targetFrameRate = 60;
-        SetScoreValue();
+        //Time.timeScale = .1f;
+        StartCoroutine(SetScoreValue());
+        SelectEnding();
+
+        StartCoroutine(StartBarIncrease());
 
         MusicManager.instance.PlayIntroAndLoop(audioClips[0], audioClips[1]);
     }
@@ -39,9 +52,11 @@ public class ScoreMenu : MonoBehaviour
         
     }
 
-    public void SetScoreValue()
+    public IEnumerator SetScoreValue()
     {
-        finalScoreUI.text = GameManager.finalScore.ToString();
+        yield return new WaitForSeconds(0.5f);
+        finalScoreController.StartIncreasingDisplay(GameManager.finalScore, finalScoreUI);
+        //finalScoreUI.text = GameManager.finalScore.ToString();
         //GameManager.finalScore 
     }
 
@@ -69,5 +84,31 @@ public class ScoreMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("MainMenu");
+    }
+
+    private void SelectEnding()
+    {
+        string end = "";
+
+        for (int i = 0; i < endingScores.Length; i++)
+        {
+            if (GameManager.finalScore >= endingScores[i])
+            {
+                end = "Ending num " + i;
+            }
+        }
+        //Debug.Log(end);
+    }
+
+    //private void SetScoreBar()
+    //{
+    //    float percentaje = GameManager.finalScore / endingScores[endingScores.Length - 1];
+    //    scoreBar.value = percentaje;
+    //    Debug.Log(Mathf.Lerp(endingScores[1], endingScores[endingScores.Length - 1], percentaje));
+    //}
+    private IEnumerator StartBarIncrease()
+    {
+        yield return new WaitForSeconds(1.7f);
+        scoreBarController.SetScoreBar(endingScores[endingScores.Length - 1]);
     }
 }
