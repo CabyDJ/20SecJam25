@@ -45,10 +45,16 @@ public class ScoreBarController : MonoBehaviour
     {
         scoreBar.maxValue = maxValue;
         //scoreBarTarget = target;
-        scoreBarTarget = GameManager.finalScore /*/ target*/;
+        //scoreBarTarget = GameManager.finalScore /*/ target*/;
         //scoreBar.value = percentaje;
         //Debug.Log(Mathf.Lerp(endingScores[1], endingScores[endingScores.Length - 1], percentaje));
         isMovingBar = true;
+    }
+
+    public void SetScoreTarget(float targ)//call when emitting a particle (+ 1.2 time delay?)
+    {
+        scoreBarTarget += targ;
+        //scoreBarTimeCurrent = 0f;
     }
 
     private void IncreaseScoreBar()
@@ -72,20 +78,34 @@ public class ScoreBarController : MonoBehaviour
         //float curve = speedCurve.Evaluate(scoreBarCurrent);
         //scoreBarCurrent += (curve * Time.deltaTime);
 
-        //move bar over time vvvv
-        float scoreBarCurrentPercent = scoreBarTimeCurrent / scoreBarTimeTarget;
-        //move bar with smoothing vvvv
-        //scoreBarCurrent = Mathf.SmoothStep(0, scoreBarTarget, scoreBarCurrentPercent);
-        scoreBarCurrent = Mathf.Lerp(0, scoreBarTarget, EaseOutQuint(scoreBarCurrentPercent));
+        ////move bar over time vvvv
+        //float scoreBarCurrentPercent = scoreBarTimeCurrent / scoreBarTimeTarget;
+        ////move bar with smoothing vvvv
+        ////scoreBarCurrent = Mathf.SmoothStep(0, scoreBarTarget, scoreBarCurrentPercent);
+        ////scoreBarCurrent = Mathf.Lerp(0, scoreBarTarget, EaseOutQuint(scoreBarCurrentPercent));
 
-        if (scoreBarCurrent >= scoreBarTarget /*scoreBarTimeCurrent >= scoreBarTimeTarget*/)
+        //float perc = scoreBarCurrent / scoreBarTarget;
+        //scoreBarCurrent = Mathf.Lerp(scoreBarCurrent, scoreBarTarget, EaseOutQuint(perc * scoreBarTimeCurrent));
+
+
+        //scoreBarCurrent = Mathf.Lerp(scoreBarCurrent, scoreBarTarget, scoreBarTimeCurrent /*EaseOutQuint(scoreBarCurrentPercent)*/);
+        //float perc = scoreBarCurrent / scoreBarTarget;
+        //scoreBarCurrent = Mathf.Lerp(scoreBarCurrent, scoreBarTarget, EaseOutQuint(scoreBarCurrent));
+
+        scoreBarCurrent = Mathf.SmoothDamp(scoreBarCurrent, scoreBarTarget, ref barSpeed, 0.2f);
+
+        //float sp = 1000f;
+        //scoreBarCurrent = Mathf.MoveTowards(scoreBarCurrent, scoreBarTarget, sp * Time.deltaTime);
+
+        scoreBar.value = /*curve*/scoreBarCurrent;
+
+        if (scoreBar.value >= GameManager.finalScore /*scoreBarTimeCurrent >= scoreBarTimeTarget*/)
         {
-            scoreBarCurrent = scoreBarTarget;
+            scoreBarCurrent = GameManager.finalScore;
+            scoreBar.value = GameManager.finalScore;
             isMovingBar = false;
             scoreBarTimeCurrent = 0;
         }
-
-        scoreBar.value = /*curve*/scoreBarCurrent;
     }
     //SOURCE: https://easings.net/en#easeOutQuint From fast to slow
     private float EaseOutQuint(float percentage)
@@ -98,7 +118,7 @@ public class ScoreBarController : MonoBehaviour
         if (scoreBar.value >= iconsPercentage[iconArrayValue])
         {
             icons[iconArrayValue].Play("IconSquashStretch");
-            Debug.Log("reached " + iconsPercentage[iconArrayValue]);
+            //Debug.Log("reached " + iconsPercentage[iconArrayValue]);
             if (iconArrayValue < iconsPercentage.Length - 1)
                 iconArrayValue++;
         }

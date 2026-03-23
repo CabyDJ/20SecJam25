@@ -1556,10 +1556,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9664249bc8d68334392f90edf14aaa45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FinalScoreDisplayController
-  increaseTimeTarget: 2
+  increaseTimeTarget: 4
   squashStretchTimeTarget: 0.2
   emitParticleEvery: 100
   ps: {fileID: 1332240867}
+  scoreBarController: {fileID: 1346035695}
 --- !u!1 &816743152
 GameObject:
   m_ObjectHideFlags: 0
@@ -2982,6 +2983,7 @@ GameObject:
   - component: {fileID: 1332240867}
   - component: {fileID: 1332240866}
   - component: {fileID: 1332240869}
+  - component: {fileID: 1332240870}
   m_Layer: 0
   m_Name: Karma Particles System
   m_TagString: Untagged
@@ -3641,7 +3643,7 @@ ParticleSystem:
         m_RotationOrder: 4
     randomizeRotationDirection: 0
     gravitySource: 1
-    maxNumParticles: 130
+    maxNumParticles: 131
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -6914,7 +6916,7 @@ ParticleSystem:
     outside: 0
     enter: 2
     exit: 0
-    colliderQueryMode: 0
+    colliderQueryMode: 1
     radiusScale: 1
     primitives:
     - {fileID: 1834310286}
@@ -7892,6 +7894,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c16535923576c745b549d7c7ba3924c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShrinkParticles
+--- !u!114 &1332240870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332240864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da3b6c7dbdacb541945b2555dca7fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreBarTrigger
+  barController: {fileID: 1346035695}
 --- !u!1 &1342000679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8054,7 +8069,7 @@ MonoBehaviour:
   m_Direction: 3
   m_MinValue: 0
   m_MaxValue: 1
-  m_WholeNumbers: 0
+  m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -8954,6 +8969,7 @@ GameObject:
   - component: {fileID: 1834310286}
   - component: {fileID: 1834310285}
   - component: {fileID: 1834310287}
+  - component: {fileID: 1834310288}
   m_Layer: 0
   m_Name: Particle system Force Field
   m_TagString: Untagged
@@ -9138,7 +9154,7 @@ ParticleSystemForceField:
     m_GravityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 20
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -9297,14 +9313,14 @@ ParticleSystemForceField:
     m_DragCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 1.5
       minScalar: 0
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0
+          value: 1.2
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9312,8 +9328,8 @@ ParticleSystemForceField:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 0
+          time: 4
+          value: 3
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -9506,7 +9522,20 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.15
+  m_Radius: 0.93
+--- !u!114 &1834310288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834310284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3da3b6c7dbdacb541945b2555dca7fdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScoreBarTrigger
+  barController: {fileID: 1346035695}
 --- !u!1 &1896425279
 GameObject:
   m_ObjectHideFlags: 0

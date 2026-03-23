@@ -1,4 +1,7 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FinalScoreDisplayController : MonoBehaviour
@@ -32,9 +35,29 @@ public class FinalScoreDisplayController : MonoBehaviour
     [SerializeField]
     ParticleSystem ps;
 
+    private int emittedParticles = 0;
+    [SerializeField]
+    private ScoreBarController scoreBarController;
+    private List<ParticleData> increaseBarTiming = new List<ParticleData>();
+    private List<ParticleData> removeFromList = new List<ParticleData>();
+    private float scoreTime = 0;
+
+    public class ParticleData
+    {
+        public float timeDelay;
+        public float score;
+
+        public ParticleData(float time, float score)
+        {
+            timeDelay = (time - 0.25f);
+            this.score = score;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        scoreTime += Time.deltaTime;
         if (isIncreasingDisplay)
         {
             CheckIncreaseScoreDisplay();
@@ -44,6 +67,34 @@ public class FinalScoreDisplayController : MonoBehaviour
             SquashStretchText();
         }
 
+    }
+
+    private void LateUpdate()
+    {
+        if(emittedParticles > 0)
+        {
+            EmitParticle();
+            emittedParticles--;
+            increaseBarTiming.Add(new ParticleData(scoreTime + ps.main.duration, 100));
+        }
+
+        if (increaseBarTiming.Count > 0)
+        {
+            foreach (ParticleData p in increaseBarTiming)
+            {
+                if (p.timeDelay <= scoreTime)
+                {
+                    scoreBarController.SetScoreTarget(p.score);
+                    removeFromList.Add(p);
+                }
+            }
+
+            foreach (ParticleData t in removeFromList)
+            {
+                increaseBarTiming.Remove(t);
+            }
+            removeFromList.Clear();
+        }
     }
 
     public void StartIncreasingDisplay(float target, TMP_Text UI)
@@ -58,7 +109,11 @@ public class FinalScoreDisplayController : MonoBehaviour
         isStretching = true;
 
         if(scoreTarget > 0)
+        {
+            //Debug.Log("FIRST PARTICLE: " + GameManager.finalScore % 100 );
             EmitParticle();
+            increaseBarTiming.Add(new ParticleData(scoreTime + ps.main.duration, GameManager.finalScore % 100));
+        }
     }
 
     private void CheckIncreaseScoreDisplay()
@@ -66,15 +121,17 @@ public class FinalScoreDisplayController : MonoBehaviour
         increaseTime += Time.deltaTime;
 
         float increaseCurrentPercent = increaseTime / increaseTimeTarget;
-        scoreCurrent = Mathf.SmoothStep(0, scoreTarget, increaseCurrentPercent);
+        //scoreCurrent = Mathf.SmoothStep(0, scoreTarget, increaseCurrentPercent);
+        scoreCurrent = Mathf.SmoothStep(0, scoreTarget, EaseOutSine(increaseCurrentPercent));
         //scoreCurrent = Mathf.Lerp(0, scoreTarget, EaseOutQuint(increaseCurrentPercent));
+        //scoreCurrent = Mathf.Lerp(0, scoreTarget, EaseOutSine(increaseCurrentPercent));
 
         CheckParticleEmission();
 
         if (scoreCurrent >= scoreTarget)
         {
-            scoreCurrent = scoreTarget;
             isIncreasingDisplay = false;
+            scoreCurrent = scoreTarget;
             increaseTime = 0;
             FinalStretch();
         }
@@ -91,6 +148,11 @@ public class FinalScoreDisplayController : MonoBehaviour
     private float EaseOutQuint(float percentage)
     {
         return 1 - Mathf.Pow(1 - percentage, 5);
+    }
+
+    private float EaseOutSine(float x)
+    {
+        return Mathf.Sin((x * Mathf.PI) / 2);
     }
 
     private void SquashStretchText()
@@ -152,13 +214,17 @@ public class FinalScoreDisplayController : MonoBehaviour
             squashStretchTimeCurrent = 0;
             currentScale = originalScale;
             //emite particle
-            EmitParticle();
+            //EmitParticle();
+            emittedParticles++;
+            CheckParticleEmission();
+            //for (int i = 0; i < emitParticleEvery; i++) { 
+
+            //}
         }
     }
 
     private void EmitParticle()
     {
         ps.Play();
-        //Debug.Log("Emit :)");
     }
 }
