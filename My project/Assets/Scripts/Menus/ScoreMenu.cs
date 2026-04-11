@@ -25,6 +25,9 @@ public class ScoreMenu : MonoBehaviour
     [SerializeField]
     private ScoreBarController scoreBarController;
     private FinalScoreDisplayController finalScoreController;
+    [SerializeField]
+    private EndingsController endingsController;
+    private int ending = 0;
 
     private void Awake()
     {
@@ -35,7 +38,7 @@ public class ScoreMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GameManager.finalScore = 2789;//TEST
+        //GameManager.finalScore = 12789;//TEST
         Application.targetFrameRate = 60;
         //Time.timeScale = .1f;
         StartCoroutine(SetScoreValue());
@@ -95,6 +98,7 @@ public class ScoreMenu : MonoBehaviour
             if (GameManager.finalScore >= endingScores[i])
             {
                 end = "Ending num " + i;
+                ending = i;
             }
         }
         //Debug.Log(end);
@@ -110,5 +114,19 @@ public class ScoreMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(1.7f);
         scoreBarController.SetScoreBar(endingScores[endingScores.Length - 1]);
+    }
+
+    public void WatchEnding()
+    {
+        //CALLED FROM BUTTON
+        //MAKE CAMERA GO DOWN AND FADE IN
+        //HIDE UI
+        //FADE OUT AND SHOW SCORE DEPENDING ENDING
+        endingsController.StartEnd(ending);
+    }
+
+    private void ToggleUI(bool toggle)
+    {
+        //HIDE UI WHILE WATCHING ENDING AND SHOW IT AGAIN AFTER X TIME OR PLAYER PRESSES BUTTON
     }
 }

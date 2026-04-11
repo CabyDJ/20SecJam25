@@ -134,4 +134,14 @@ public class FadeInOut : MonoBehaviour
     {
         audioManager.SetMusicVolume(audioManager.ValueToVolume(Mathf.Lerp(startMusicVolume, targetMusicVolume, fadePercentage)));
     }
+
+    //private void FadeInFX()
+    //{
+    //    audioManager.SetSoundFXVolume(audioManager.ValueToVolume(Mathf.Lerp(startFXVolume, targetFXVolume, fadePercentage)));
+    //}
+
+    //private void FadeInMusic()
+    //{
+    //    audioManager.SetMusicVolume(audioManager.ValueToVolume(Mathf.Lerp(startMusicVolume, targetMusicVolume, fadePercentage)));
+    //}
 }

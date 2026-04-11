@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FinalScoreDisplayController : MonoBehaviour
 {
@@ -41,6 +42,9 @@ public class FinalScoreDisplayController : MonoBehaviour
     private List<ParticleData> increaseBarTiming = new List<ParticleData>();
     private List<ParticleData> removeFromList = new List<ParticleData>();
     private float scoreTime = 0;
+
+    [SerializeField]
+    private EndingUI endBtn;
 
     public class ParticleData
     {
@@ -200,6 +204,14 @@ public class FinalScoreDisplayController : MonoBehaviour
         squashStretchTimeCurrent = 0;
         //targetScale = 28;
         squashStretchTimeTarget = 2f;
+
+        ShowEndingButton();
+    }
+
+    private void ShowEndingButton()
+    {
+        endBtn.gameObject.SetActive(true);
+        endBtn.EnableUI();
     }
 
     private void CheckParticleEmission()

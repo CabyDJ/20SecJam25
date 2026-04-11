@@ -65,10 +65,13 @@ public class ScoreInputHandler : MonoBehaviour
 
     public void OnMoveInput(InputAction.CallbackContext context)
     {
-        if (context.performed && /*!MoveInput*/ EventSystem.current.currentSelectedGameObject == null)
+        if (context.performed)
         {
-            //MoveInput = true;
-            DefaultSelect();
+            StartCoroutine(SetMove());
+            if (EventSystem.current.currentSelectedGameObject == null)
+            {
+                DefaultSelect();
+            }
         }
     }
 
@@ -81,5 +84,12 @@ public class ScoreInputHandler : MonoBehaviour
     {
         yield return new WaitForEndOfFrame();
         selectable.Select();
+    }
+
+    public IEnumerator SetMove()
+    {
+        MoveInput = true;
+        yield return new WaitForEndOfFrame();
+        MoveInput = false;
     }
 }
