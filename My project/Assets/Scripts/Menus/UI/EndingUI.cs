@@ -11,6 +11,8 @@ public class EndingUI : MonoBehaviour
     {
         btn = GetComponent<Button>();
         animator = GetComponent<Animator>();
+        if(animator == null)
+            animator = transform.GetComponentInChildren<Animator>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

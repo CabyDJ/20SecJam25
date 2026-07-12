@@ -1,0 +1,854 @@
+fileFormatVersion: 2
+guid: 333f31cf64babe54da1e51019e4bbe32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7283802808298465856
+    second: Diablaso_0
+  - first:
+      213: -1238476270745067589
+    second: Diablaso_1
+  - first:
+      213: 6367475142875193538
+    second: Diablaso_2
+  - first:
+      213: -8045549299328297954
+    second: Diablaso_3
+  - first:
+      213: 5737572953280434669
+    second: Diablaso_4
+  - first:
+      213: -5643628881615069900
+    second: Diablaso_5
+  - first:
+      213: -5125969160384666573
+    second: Diablaso_6
+  - first:
+      213: 2866387040679026756
+    second: Diablaso_7
+  - first:
+      213: 2526791972531219672
+    second: Diablaso_8
+  - first:
+      213: -6181589508631130453
+    second: Diablaso_9
+  - first:
+      213: 6869562789050481118
+    second: Diablaso_10
+  - first:
+      213: 2767370681101164070
+    second: Diablaso_11
+  - first:
+      213: -8310332260062018327
+    second: Diablaso_12
+  - first:
+      213: -6661338983313692844
+    second: Diablaso_13
+  - first:
+      213: 975506248713728827
+    second: Diablaso_14
+  - first:
+      213: -1931725101226243246
+    second: Diablaso_15
+  - first:
+      213: -8571084399603664350
+    second: Diablaso_16
+  - first:
+      213: 1744956544163345901
+    second: Diablaso_17
+  - first:
+      213: 5508395377962471381
+    second: Diablaso_18
+  - first:
+      213: 1064322482154779306
+    second: Diablaso_19
+  - first:
+      213: 7477526454998424714
+    second: Diablaso_20
+  - first:
+      213: -7154893533847645187
+    second: Diablaso_21
+  - first:
+      213: -6001278956752083532
+    second: Diablaso_22
+  - first:
+      213: -6785434767189135524
+    second: Diablaso_23
+  - first:
+      213: 6319562030807118658
+    second: Diablaso_24
+  - first:
+      213: 6863509290277480048
+    second: Diablaso_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Diablaso_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04a6f9a1014451560800000000000000
+      internalID: 7283802808298465856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf5d7bb46c00dee0800000000000000
+      internalID: -1238476270745067589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_2
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0a437f7e0dd5850800000000000000
+      internalID: 6367475142875193538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_3
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14d4a61a87785090800000000000000
+      internalID: -8045549299328297954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_4
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de15b29b334ff9f40800000000000000
+      internalID: 5737572953280434669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_5
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 256
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dd233fe6dcda1b0800000000000000
+      internalID: -5643628881615069900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3342aa90536ecd8b0800000000000000
+      internalID: -5125969160384666573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_7
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 440e474a3d377c720800000000000000
+      internalID: 2866387040679026756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_8
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dc280859e7f01320800000000000000
+      internalID: 2526791972531219672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_9
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae82c6e715963aa0800000000000000
+      internalID: -6181589508631130453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_10
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9789bc5f6955f50800000000000000
+      internalID: 6869562789050481118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_11
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62e9dd8e8fca76620800000000000000
+      internalID: 2767370681101164070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_12
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e4c889e6d4cbac80800000000000000
+      internalID: -8310332260062018327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_13
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457202bec7b2e83a0800000000000000
+      internalID: -6661338983313692844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_14
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3371c6c3c1b98d00800000000000000
+      internalID: 975506248713728827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_15
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 128
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b44b151422135e0800000000000000
+      internalID: -1931725101226243246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22a3bbd66246d0980800000000000000
+      internalID: -8571084399603664350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_17
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de579535bb4573810800000000000000
+      internalID: 1744956544163345901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_18
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df4bd95960c17c40800000000000000
+      internalID: 5508395377962471381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_19
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa23c4398ab35ce00800000000000000
+      internalID: 1064322482154779306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_20
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8c54c471b285c760800000000000000
+      internalID: 7477526454998424714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_21
+      rect:
+        serializedVersion: 2
+        x: 740
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df3954d3d36b4bc90800000000000000
+      internalID: -7154893533847645187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_22
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5e3c0c59c27bca0800000000000000
+      internalID: -6001278956752083532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_23
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f2b1fa70b45d1a0800000000000000
+      internalID: -6785434767189135524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_24
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243fd4e3f2893b750800000000000000
+      internalID: 6319562030807118658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_25
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0762597c555104f50800000000000000
+      internalID: 6863509290277480048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_26
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faa04b398cf4e284ba309d4fea332c1d
+      internalID: 1233296154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Diablaso_27
+      rect:
+        serializedVersion: 2
+        x: 1628
+        y: 0
+        width: 148
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbdd6849837ee4843b491caaac01e3c2
+      internalID: 725095649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1f25b510b81a7d14eaf9e5637ab2254b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":12.0,"y":3.0},"gridSpriteSize":{"x":148.0,"y":128.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Diablaso_0: 7283802808298465856
+      Diablaso_1: -1238476270745067589
+      Diablaso_10: 6869562789050481118
+      Diablaso_11: 2767370681101164070
+      Diablaso_12: -8310332260062018327
+      Diablaso_13: -6661338983313692844
+      Diablaso_14: 975506248713728827
+      Diablaso_15: -1931725101226243246
+      Diablaso_16: -8571084399603664350
+      Diablaso_17: 1744956544163345901
+      Diablaso_18: 5508395377962471381
+      Diablaso_19: 1064322482154779306
+      Diablaso_2: 6367475142875193538
+      Diablaso_20: 7477526454998424714
+      Diablaso_21: -7154893533847645187
+      Diablaso_22: -6001278956752083532
+      Diablaso_23: -6785434767189135524
+      Diablaso_24: 6319562030807118658
+      Diablaso_25: 6863509290277480048
+      Diablaso_26: 1233296154
+      Diablaso_27: 725095649
+      Diablaso_3: -8045549299328297954
+      Diablaso_4: 5737572953280434669
+      Diablaso_5: -5643628881615069900
+      Diablaso_6: -5125969160384666573
+      Diablaso_7: 2866387040679026756
+      Diablaso_8: 2526791972531219672
+      Diablaso_9: -6181589508631130453
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

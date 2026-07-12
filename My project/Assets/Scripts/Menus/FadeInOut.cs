@@ -144,4 +144,9 @@ public class FadeInOut : MonoBehaviour
     //{
     //    audioManager.SetMusicVolume(audioManager.ValueToVolume(Mathf.Lerp(startMusicVolume, targetMusicVolume, fadePercentage)));
     //}
+
+    public void SetImageColor(Color col)
+    {
+        img.color = col;
+    }
 }

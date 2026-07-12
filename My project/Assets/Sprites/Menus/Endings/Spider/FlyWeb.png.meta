@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 237b73cedd00fb842944a022514770a7
+guid: e0ff89da780cac942952775f949a77b5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3820193201140532292
-    second: Trident_0
+      213: -532422920762390051
+    second: FlyWeb_0
+  - first:
+      213: 7706598998806476843
+    second: FlyWeb_1
+  - first:
+      213: 5063556038083968985
+    second: FlyWeb_2
+  - first:
+      213: -4899003098069539183
+    second: FlyWeb_3
+  - first:
+      213: 3036646630807204547
+    second: FlyWeb_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +125,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trident_0
+      name: FlyWeb_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 180
+        width: 80
+        height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4440857e97d040530800000000000000
-      internalID: 3820193201140532292
+      spriteID: dd98ea9ac247c98f0800000000000000
+      internalID: -532422920762390051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyWeb_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28bd3645f653fa60800000000000000
+      internalID: 7706598998806476843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyWeb_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df7746836d554640800000000000000
+      internalID: 5063556038083968985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyWeb_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196e60a63ae330cb0800000000000000
+      internalID: -4899003098069539183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyWeb_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c276a99506542a20800000000000000
+      internalID: 3036646630807204547
       vertices: []
       indices: 
       edges: []
@@ -138,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dd384744e6c48c34196b2cae31f571bc
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +246,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":80.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Trident_0: 3820193201140532292
+      FlyWeb_0: -532422920762390051
+      FlyWeb_1: 7706598998806476843
+      FlyWeb_2: 5063556038083968985
+      FlyWeb_3: -4899003098069539183
+      FlyWeb_4: 3036646630807204547
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

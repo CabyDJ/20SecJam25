@@ -19,6 +19,8 @@ public class EndingsController : MonoBehaviour
     private bool pressToShowUI;
     [SerializeField]
     private ScoreInputHandler inputHandler;
+    [SerializeField]
+    private FlyGhostController ghostController;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,12 +40,24 @@ public class EndingsController : MonoBehaviour
     public void StartEnd(int end)
     {
         endingValue = end;
-        StartCoroutine(GoUnderground());
+
+        if (endingValue > 0)
+        {
+            StartCoroutine(GoUnderground());
+        }
+        else
+        {
+            //GOOD ENDING: (CAMERA DOESN'T GO UNDERGROUND AND TRANSITION GOES TO WHITE INSTEAD OF DARK WHILE FLY GOES UP)
+            Ascend();
+        }
+
         HideUIElements();
     }
 
     private IEnumerator GoUnderground()
     {
+        ghostController.StartGoHell();
+        yield return new WaitForSeconds(1.75f);
         fade.StartFadeIn(2.5f);
         cameraAnimator.Play("GoDown");
         yield return new WaitForSeconds(3.1f);
@@ -72,7 +86,13 @@ public class EndingsController : MonoBehaviour
     private void ShowEnding()
     {
         //ShowUIElements();
-        transform.GetChild(endingValue).gameObject.SetActive(true);
+        //transform.GetChild(endingValue).gameObject.SetActive(true);
+        GameObject ending = transform.GetChild(endingValue).gameObject;
+        ending.SetActive(true);
+
+        if (ending.GetComponent<BaseEndingController>())
+            ending.GetComponent<BaseEndingController>().StartEnding();
+
         pressToShowUI = true;
     }
 
@@ -81,5 +101,20 @@ public class EndingsController : MonoBehaviour
 
     //    yield return new WaitForSeconds(10);
     //}
+
+    private void Ascend()
+    {
+        StartCoroutine(StartGoodEnding());
+    }
+
+    private IEnumerator StartGoodEnding()
+    {
+        fade.SetImageColor(new Color(0.9f,0.9f,0.9f,0));
+        fade.StartFadeIn(6f);
+        ghostController.StartGoHeaven();
+        yield return new WaitForSeconds(8f);
+        ShowEnding();
+        fade.StartFadeOut(8f);
+    }
 
 }

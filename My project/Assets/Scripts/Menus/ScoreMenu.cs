@@ -38,7 +38,12 @@ public class ScoreMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //GameManager.finalScore = 12789;//TEST
+        //GameManager.finalScore = -100;//TEST ENDING 0
+        //GameManager.finalScore = 0;//TEST ENDING 1
+        //GameManager.finalScore = 3789;//TEST ENDING 2
+        //GameManager.finalScore = 7789;//TEST ENDING 3
+        //GameManager.finalScore = 10000;//TEST ENDING 4
+        //GameManager.finalScore = 12789;//TEST 5
         Application.targetFrameRate = 60;
         //Time.timeScale = .1f;
         StartCoroutine(SetScoreValue());

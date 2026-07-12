@@ -1,0 +1,794 @@
+fileFormatVersion: 2
+guid: db8c04bd431d6b349baaa256db8d121b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4330993353671661259
+    second: FlyOffice_0
+  - first:
+      213: 911290780300610742
+    second: FlyOffice_1
+  - first:
+      213: 2469452828285015076
+    second: FlyOffice_2
+  - first:
+      213: -894897188995473135
+    second: FlyOffice_3
+  - first:
+      213: 5551954991613086484
+    second: FlyOffice_4
+  - first:
+      213: -3588424652190436558
+    second: FlyOffice_5
+  - first:
+      213: 4881894245790616220
+    second: FlyOffice_6
+  - first:
+      213: -4029624427830954640
+    second: FlyOffice_7
+  - first:
+      213: 5704472243627455930
+    second: FlyOffice_8
+  - first:
+      213: 6300419663018616010
+    second: FlyOffice_9
+  - first:
+      213: -238531621683777276
+    second: FlyOffice_10
+  - first:
+      213: -6890690228145070299
+    second: FlyOffice_11
+  - first:
+      213: 1684960865925131414
+    second: FlyOffice_12
+  - first:
+      213: 8523691329256645608
+    second: FlyOffice_13
+  - first:
+      213: -4131877312297297256
+    second: FlyOffice_14
+  - first:
+      213: -7123933754737558307
+    second: FlyOffice_15
+  - first:
+      213: -9076586028496680742
+    second: FlyOffice_16
+  - first:
+      213: -3586618746496089694
+    second: FlyOffice_17
+  - first:
+      213: -6757715060077657150
+    second: FlyOffice_18
+  - first:
+      213: 3895658467315092763
+    second: FlyOffice_19
+  - first:
+      213: 2683440716933804906
+    second: FlyOffice_20
+  - first:
+      213: 374990568610029718
+    second: FlyOffice_21
+  - first:
+      213: -645992451319765454
+    second: FlyOffice_22
+  - first:
+      213: 7729953294406485891
+    second: FlyOffice_23
+  - first:
+      213: 9157115644856843607
+    second: FlyOffice_24
+  - first:
+      213: 9178721520565672688
+    second: FlyOffice_25
+  - first:
+      213: -4718446981992395528
+    second: FlyOffice_26
+  - first:
+      213: -1473352702245367680
+    second: FlyOffice_27
+  - first:
+      213: -6827981714185745055
+    second: FlyOffice_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FlyOffice_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc65d223287ca1c30800000000000000
+      internalID: 4330993353671661259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_1
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bc08eee22e85ac00800000000000000
+      internalID: 911290780300610742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 424138b7342454220800000000000000
+      internalID: 2469452828285015076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_3
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 111ed6b7fbfa493f0800000000000000
+      internalID: -894897188995473135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_4
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41b0e0c36a18c0d40800000000000000
+      internalID: 5551954991613086484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2333fe68aca533ec0800000000000000
+      internalID: -3588424652190436558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_6
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a8f5f73f8ffb340800000000000000
+      internalID: 4881894245790616220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_7
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07536e8cee5e318c0800000000000000
+      internalID: -4029624427830954640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_8
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 288
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab57d70384b5a2f40800000000000000
+      internalID: 5704472243627455930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac46c1e6d469f6750800000000000000
+      internalID: 6300419663018616010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_10
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40137ddf0c090bcf0800000000000000
+      internalID: -238531621683777276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_11
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f5826feb95f50a0800000000000000
+      internalID: -6890690228145070299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_12
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69ce6e1fafe226710800000000000000
+      internalID: 1684960865925131414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e36b6f7a1c3a4670800000000000000
+      internalID: 8523691329256645608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_14
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89a1601e97f98a6c0800000000000000
+      internalID: -4131877312297297256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_15
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddcf3798ef3b22d90800000000000000
+      internalID: -7123933754737558307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_16
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad88e2ec81d790280800000000000000
+      internalID: -9076586028496680742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_17
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a10856b045c93ec0800000000000000
+      internalID: -3586618746496089694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_18
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c383cee4f5c732a0800000000000000
+      internalID: -6757715060077657150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_19
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 96
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d0f866cb8201630800000000000000
+      internalID: 3895658467315092763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63b8a45d1f7d3520800000000000000
+      internalID: 2683440716933804906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_21
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6906f147feb343500800000000000000
+      internalID: 374990568610029718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2366083c949f807f0800000000000000
+      internalID: -645992451319765454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_23
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3878573f09f464b60800000000000000
+      internalID: 7729953294406485891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FlyOffice_24
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75d3dda992c941f70800000000000000
+      internalID: 9157115644856843607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99380a792601ab7498c6031b9d4853b0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":96.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      FlyOffice_0: 4330993353671661259
+      FlyOffice_1: 911290780300610742
+      FlyOffice_10: -238531621683777276
+      FlyOffice_11: -6890690228145070299
+      FlyOffice_12: 1684960865925131414
+      FlyOffice_13: 8523691329256645608
+      FlyOffice_14: -4131877312297297256
+      FlyOffice_15: -7123933754737558307
+      FlyOffice_16: -9076586028496680742
+      FlyOffice_17: -3586618746496089694
+      FlyOffice_18: -6757715060077657150
+      FlyOffice_19: 3895658467315092763
+      FlyOffice_2: 2469452828285015076
+      FlyOffice_20: 2683440716933804906
+      FlyOffice_21: 374990568610029718
+      FlyOffice_22: -645992451319765454
+      FlyOffice_23: 7729953294406485891
+      FlyOffice_24: 9157115644856843607
+      FlyOffice_3: -894897188995473135
+      FlyOffice_4: 5551954991613086484
+      FlyOffice_5: -3588424652190436558
+      FlyOffice_6: 4881894245790616220
+      FlyOffice_7: -4029624427830954640
+      FlyOffice_8: 5704472243627455930
+      FlyOffice_9: 6300419663018616010
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
