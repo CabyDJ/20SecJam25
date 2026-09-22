@@ -11,10 +11,12 @@ public class BuildingsController : MonoBehaviour
     private KaijuScene3Controller sceneCont;
 
     protected bool transition;
+    protected bool newCycle;
 
     public void DestroyBuildings()
     {
         transition = false;
+        newCycle = false;
 
         //LBuildingAnimator.GetCurrentAnimatorClipInfo(0)[0].clip.;
 
@@ -47,6 +49,10 @@ public class BuildingsController : MonoBehaviour
 
     public void NormalBuildings()
     {
-        sceneCont.ReturnToNormal();
+        if (newCycle == false)
+        {
+            newCycle = true;
+            sceneCont.ReturnToNormal();
+        }
     }
 }

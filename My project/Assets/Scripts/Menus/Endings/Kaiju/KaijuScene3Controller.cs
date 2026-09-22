@@ -9,6 +9,12 @@ public class KaijuScene3Controller : MonoBehaviour
     private DemonController demonCont;
     [SerializeField]
     private BuildingsController buildingsCont;
+    [SerializeField]
+    private FlyKaijuCont flyCont;
+    [SerializeField]
+    private GameObject beam;
+    [SerializeField]
+    private FlashFade flashFade;
 
     public void StartScene()
     {
@@ -21,19 +27,36 @@ public class KaijuScene3Controller : MonoBehaviour
 
     private IEnumerator NormalTime()
     {
+        Debug.Log("Cycle");
         yield return new WaitForSeconds(Random.Range(8, 14));
-        ChargeBeam();
+        StartCoroutine(ChargeBeam());
     }
 
-    private void ChargeBeam()
+    private IEnumerator ChargeBeam()
     {
         //chargeBeam Animations
-        StartCoroutine(StartBeam());
+        flyCont.ShowChargeWindow();
+        yield return new WaitForSeconds(4f);
+        //charged laser
+        flyCont.ChargedLaser();
+        yield return new WaitForSeconds(1.5f);
+        demonCont.StartPointing();
+        yield return new WaitForSeconds(1f);
+        flashFade.StartFadeIn(0.25f);
+        yield return new WaitForSeconds(0.4f);
+        StartBeam();
     }
 
-    private IEnumerator StartBeam()
+    private void StartBeam()
     {
-        yield return new WaitForSeconds(1f);//change to when finish beam animation? or refactor
+        beam.SetActive(true);
+        flyCont.HideChargeWindow();
+    }
+
+    public void FinishLaserAnimation()
+    {
+        flashFade.StartFadeOut(1f);
+        beam.SetActive(false);
         DestroyCity();
     }
 

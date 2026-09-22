@@ -19,4 +19,9 @@ public class DemonController : MonoBehaviour
         yield return new WaitForSeconds(4);
         demonAnimator.Play("DemoñoLaugh3");
     }
+
+    public void StartPointing()
+    {
+        demonAnimator.Play("DemoñoPoint");
+    }
 }

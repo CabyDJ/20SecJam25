@@ -1,0 +1,322 @@
+fileFormatVersion: 2
+guid: a61b0b83c945fa743b1c15a966a4c012
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5772092677419907839
+    second: ChargingParticlesWindow_0
+  - first:
+      213: 7573518754038526000
+    second: ChargingParticlesWindow_1
+  - first:
+      213: 1751222537195569331
+    second: ChargingParticlesWindow_2
+  - first:
+      213: 2633597250253736369
+    second: ChargingParticlesWindow_3
+  - first:
+      213: -8958665309911679304
+    second: ChargingParticlesWindow_4
+  - first:
+      213: -8258793036169685956
+    second: ChargingParticlesWindow_5
+  - first:
+      213: -4763959660322021537
+    second: ChargingParticlesWindow_6
+  - first:
+      213: -4007628163043570070
+    second: ChargingParticlesWindow_7
+  - first:
+      213: -4362750471925503
+    second: ChargingParticlesWindow_8
+  - first:
+      213: -398137287821208966
+    second: ChargingParticlesWindow_9
+  - first:
+      213: -5816417601250360711
+    second: ChargingParticlesWindow_10
+  - first:
+      213: 5646124631794079839
+    second: ChargingParticlesWindow_11
+  - first:
+      213: 6242913360408802579
+    second: ChargingParticlesWindow_12
+  - first:
+      213: 5837847829181898798
+    second: ChargingParticlesWindow_13
+  - first:
+      213: -6231195579522777035
+    second: ChargingParticlesWindow_14
+  - first:
+      213: -3082746907369884113
+    second: ChargingParticlesWindow_15
+  - first:
+      213: -8961870825905637625
+    second: ChargingParticlesWindow_16
+  - first:
+      213: 2266300944650837456
+    second: ChargingParticlesWindow_17
+  - first:
+      213: 3274812953938280931
+    second: ChargingParticlesWindow_18
+  - first:
+      213: 2358946938855099461
+    second: ChargingParticlesWindow_19
+  - first:
+      213: -8216390353025985239
+    second: ChargingParticlesWindow_20
+  - first:
+      213: -4047917454693378706
+    second: ChargingParticlesWindow_21
+  - first:
+      213: 2901443190747098568
+    second: ChargingParticlesWindow_22
+  - first:
+      213: 3835012512295081511
+    second: ChargingParticlesWindow_23
+  - first:
+      213: -752205190374501689
+    second: ChargingParticlesWindow_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ChargingParticlesWindow_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 105c0cfaa4865efa0800000000000000
+      internalID: -5772092677419907839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChargingParticlesWindow_1
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 030b93a3e2b8a1960800000000000000
+      internalID: 7573518754038526000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChargingParticlesWindow_2
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b043348e979d4810800000000000000
+      internalID: 1751222537195569331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChargingParticlesWindow_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b9c1d6eeba6c8420800000000000000
+      internalID: 2633597250253736369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChargingParticlesWindow_4
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 144
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8be791d9d5d6ca380800000000000000
+      internalID: -8958665309911679304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 134f105f332d99e4b9ba84c179cc4f34
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":5.0,"y":1.0},"gridSpriteSize":{"x":144.0,"y":96.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      ChargingParticlesWindow_0: -5772092677419907839
+      ChargingParticlesWindow_1: 7573518754038526000
+      ChargingParticlesWindow_2: 1751222537195569331
+      ChargingParticlesWindow_3: 2633597250253736369
+      ChargingParticlesWindow_4: -8958665309911679304
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
