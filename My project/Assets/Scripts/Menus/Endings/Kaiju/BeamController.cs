@@ -25,9 +25,10 @@ public class BeamController : MonoBehaviour
         //flyBeamed.SetActive(false);
         //scene3Cont.FinishLaserAnimation();
 
-        //explosionsFade.StartFadeIn(0.15f);
-        yield return new WaitForSeconds(0.25f);
+        explosionsFade.StartFadeIn(0.4f);
+        yield return new WaitForSeconds(0.4f);
         StartExplosions();
+        //explosionsFade.StartFadeOut(0.1f);
     }
 
     public void StartExplosions()
@@ -40,6 +41,6 @@ public class BeamController : MonoBehaviour
     {
         explosions.SetActive(false);
         scene3Cont.FinishLaserAnimation();
-        explosionsFade.StartFadeOut(0.5f);
+        explosionsFade.StartFadeOut(2f);
     }
 }

@@ -27,7 +27,7 @@ public class BuildingsController : MonoBehaviour
     }
     private IEnumerator BuildingsTransition()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(10f);
         //turn variable to true and when building animation cycle end check for variable and then start transition animation
         transition = true;
 

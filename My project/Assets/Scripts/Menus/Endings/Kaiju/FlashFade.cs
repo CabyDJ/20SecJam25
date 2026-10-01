@@ -85,6 +85,12 @@ public class FlashFade : MonoBehaviour
         }
     }
 
+    public void StopFades()
+    {
+        isFadingIn = false;
+        isFadingOut = false;
+    }
+
     //private void SetAlpha(float alpha)
     //{
     //    currentA = spr.color;
