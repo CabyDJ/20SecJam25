@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     [SerializeField]
     private GameObject uiManagerGO;
-    private UIManager uiManager;
+    private static UIManager uiManager;
     [SerializeField]
     private FadeInOut fade;
 
@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public static int finalScore;
-    public int score
+    public static int score
     {
         get { return _score; }
         set
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
         }
     }
     [SerializeField]
-    private int _score;
+    private static int _score;
 
     public float time
     {
@@ -152,5 +152,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         //yield return new WaitForEndOfFrame();
         MusicManager.instance.PlayOnce(audioClips[0]);
+    }
+
+    public static int GetScore()
+    {
+        return score;
     }
 }

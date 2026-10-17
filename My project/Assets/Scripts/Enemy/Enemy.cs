@@ -91,6 +91,9 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     AudioClip[] tauntedAudioClips;
 
+    [SerializeField]
+    private ShowPoints showPoints;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -258,6 +261,8 @@ public class Enemy : MonoBehaviour
             {
                 rageBonus = true;
                 GameManager.instance.ChangeScore(rageScore);
+                showPoints.gameObject.SetActive(true);
+                showPoints.SetPoints(rageScore);
             }
             //CalculateFinalMoveSpeed();
             //CalculateFinalThrowSpeed();

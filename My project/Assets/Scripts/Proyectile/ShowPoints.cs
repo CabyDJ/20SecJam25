@@ -12,6 +12,9 @@ public class ShowPoints : MonoBehaviour
 
     public void SetPoints(int points)
     {
-        text.text = "+" + points.ToString();
+        if (points >= 0f)
+            text.text = "+" + points.ToString();
+        else
+            text.text = points.ToString();
     }
 }
